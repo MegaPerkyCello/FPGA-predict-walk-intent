@@ -14,7 +14,7 @@ void conv1_1d(const data_t inputs[C1_IC][C1_IN_LEN],
     
     for (int oc = 0; oc < C1_OC; ++oc) {
         for (int o = 0; o < C1_OUT_LEN; ++o) {
-            data_t acc = bias[oc];
+            acc_t acc = bias[oc];
 
             for (int ic = 0; ic < C1_IC; ++ic) {
                 for (int k = 0; k < C1_K; ++k) {
@@ -26,7 +26,7 @@ void conv1_1d(const data_t inputs[C1_IC][C1_IN_LEN],
                     acc += v * weights[oc][ic][k];
                 }
             }
-            outputs[oc][o] = acc;
+            outputs[oc][o] = (data_t)acc;
         }
     }
 }

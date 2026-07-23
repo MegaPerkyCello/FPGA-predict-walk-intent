@@ -8,6 +8,7 @@
       "-hls-syn-headers-dir=C:\\Xilinx\\2025.1\\Vitis\\common\\technology\\autopilot",
       "-fhlstoplevel=conv1_1d",
       "-IC:/Users/cocol/Ruby_Proj/workspace/header",
+      "-DUSE_FIXED",
       "-c",
       "C:\\Users\\cocol\\Ruby_Proj\\workspace\\conv1\\conv1.cpp"
     ],
@@ -21,6 +22,7 @@
       "-fhls-tb",
       "-hls-sim-headers-dir=C:\\Xilinx\\2025.1\\Vitis\\include",
       "-IC:/Users/cocol/Ruby_Proj/workspace/header",
+      "-DUSE_FIXED",
       "-c",
       "C:\\Users\\cocol\\Ruby_Proj\\workspace\\conv1\\conv1TB.cpp"
     ],

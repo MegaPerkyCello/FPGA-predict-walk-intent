@@ -1,9 +1,27 @@
 #ifndef LAYER_DIMS_H
 #define LAYER_DIMS_H
 
-// Shared numeric type for the whole inference chain.
-// Swap this one line for ap_fixed<W,I,AP_RND,AP_SAT> during the precision sweep.
-typedef float data_t;
+// Shared numeric types for the whole inference chain.
+//
+//   data_t = activations + weights (the thing that costs BRAM x every array)
+//   acc_t  = MAC accumulator only (one register per MAC unit -- nearly free to widen)
+//
+// Default build is float (bit-for-bit the validated reference). Define USE_FIXED
+// (e.g. syn.cflags/tb.cflags += -DUSE_FIXED) to flip the entire chain to
+// ap_fixed in one switch -- the "wrong arithmetic vs wrong precision" escape hatch.
+#ifdef USE_FIXED
+  #include <ap_fixed.h>
+  // <16,6> = 1 sign + 5 int + 10 frac -> range [-32,32), resolution 2^-10 ~= 1e-3.
+  // hls4ml's default; a starting point, not a standard -- size I empirically.
+  typedef ap_fixed<16, 6, AP_RND, AP_SAT> data_t;
+  // Wider accumulator: 8 int bits of headroom, 24 frac bits so ~sqrt(N) rounding
+  // over an N-term MAC stays below the data_t LSB. AP_RND/AP_SAT are deliberate --
+  // AP_TRN biases a recurrence toward -inf; AP_WRAP turns overflow catastrophic.
+  typedef ap_fixed<32, 8, AP_RND, AP_SAT> acc_t;
+#else
+  typedef float data_t;
+  typedef float acc_t;
+#endif
 
 // ---------------------------------------------------------------
 // FootDropCNN layer dimensions.
@@ -42,5 +60,9 @@ constexpr int P2_OUT_LEN = P2_IN_LEN / 2;
 constexpr int LSTM_T      = P2_OUT_LEN;   // 8 timesteps -- loop bound, NOT a weight dim
 constexpr int LSTM_IN_DIM = P2_C;         // 32 features per timestep (== c2)
 constexpr int LSTM_HIDDEN = 32;           // H
+
+// --- fc: Linear(32 -> 1), single logit. The classification metric is sign(logit).
+constexpr int FC_IN  = LSTM_HIDDEN;       // 32 (= final h_n width)
+constexpr int FC_OUT = 1;
 
 #endif // LAYER_DIMS_H

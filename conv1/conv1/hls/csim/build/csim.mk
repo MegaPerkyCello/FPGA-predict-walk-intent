@@ -86,12 +86,12 @@ all: $(TARGET)
 
 $(ObjDir)/conv1TB.o: ../../../../conv1TB.cpp $(ObjDir)/.dir csim.mk
 	$(Echo) "   Compiling ../../../../conv1TB.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CXX) -std=gnu++14 ${CCFLAG} -c -MMD -IC:/Users/cocol/Ruby_Proj/workspace/header -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CXX) -std=gnu++14 ${CCFLAG} -c -MMD -IC:/Users/cocol/Ruby_Proj/workspace/header -DUSE_FIXED -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/conv1TB.d
 
 $(ObjDir)/conv1.o: ../../../../conv1.cpp $(ObjDir)/.dir csim.mk
 	$(Echo) "   Compiling ../../../../conv1.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CXX) -std=gnu++14 ${CCFLAG} -c -MMD -IC:/Users/cocol/Ruby_Proj/workspace/header -IC:/Users/cocol/Ruby_Proj/workspace/header  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CXX) -std=gnu++14 ${CCFLAG} -c -MMD -IC:/Users/cocol/Ruby_Proj/workspace/header -IC:/Users/cocol/Ruby_Proj/workspace/header -DUSE_FIXED -DUSE_FIXED  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/conv1.d

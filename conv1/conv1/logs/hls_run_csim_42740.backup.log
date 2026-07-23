@@ -1,0 +1,96 @@
+  **** HLS Build v2025.1 6135595
+INFO: [HLS 200-2005] Using work_dir C:/Users/cocol/Ruby_Proj/workspace/conv1/conv1 
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/cocol/Ruby_Proj/workspace/conv1/conv1/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component 'C:/Users/cocol/Ruby_Proj/workspace/conv1/conv1'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file C:/Users/cocol/Ruby_Proj/workspace/conv1/hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=conv1.cpp' from C:/Users/cocol/Ruby_Proj/workspace/conv1/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file 'C:/Users/cocol/Ruby_Proj/workspace/conv1/conv1.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.cflags=-IC:/Users/cocol/Ruby_Proj/workspace/header -DUSE_FIXED' from C:/Users/cocol/Ruby_Proj/workspace/conv1/hls_config.cfg(12)
+INFO: [HLS 200-1465] Applying config ini 'syn.csimflags=-IC:/Users/cocol/Ruby_Proj/workspace/header -DUSE_FIXED' from C:/Users/cocol/Ruby_Proj/workspace/conv1/hls_config.cfg(13)
+INFO: [HLS 200-1465] Applying config ini 'tb.file=conv1TB.cpp' from C:/Users/cocol/Ruby_Proj/workspace/conv1/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/cocol/Ruby_Proj/workspace/conv1/conv1TB.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./conv1_goldens' from C:/Users/cocol/Ruby_Proj/workspace/conv1/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/cocol/Ruby_Proj/workspace/conv1/conv1_goldens' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.cflags=-IC:/Users/cocol/Ruby_Proj/workspace/header -DUSE_FIXED' from C:/Users/cocol/Ruby_Proj/workspace/conv1/hls_config.cfg(14)
+INFO: [HLS 200-1465] Applying config ini 'syn.top=conv1_1d' from C:/Users/cocol/Ruby_Proj/workspace/conv1/hls_config.cfg(11)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from C:/Users/cocol/Ruby_Proj/workspace/conv1/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xc7z020clg400-1' from C:/Users/cocol/Ruby_Proj/workspace/conv1/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1465] Applying config ini 'clock=12ns' from C:/Users/cocol/Ruby_Proj/workspace/conv1/hls_config.cfg(10)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from C:/Users/cocol/Ruby_Proj/workspace/conv1/hls_config.cfg(5)
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/cocol/Ruby_Proj/workspace/conv1/conv1/vitis-comp.json
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../conv1TB.cpp in debug mode
+   Compiling ../../../../conv1.cpp in debug mode
+   Generating csim.exe
+In file included from ../../../../conv1TB.cpp:5:
+In file included from C:/Users/cocol/Ruby_Proj/workspace/header/layer_dims.h:13:
+In file included from C:/Xilinx/2025.1/Vitis/include/ap_fixed.h:9:
+In file included from C:/Xilinx/2025.1/Vitis/include/etc/ap_common.h:677:
+In file included from C:/Xilinx/2025.1/Vitis/include/etc/ap_private.h:68:
+In file included from C:/Xilinx/2025.1/Vitis/include/hls_half.h:26:
+In file included from C:/Xilinx/2025.1/Vitis/include/etc/hls_half_fpo.h:19:
+In file included from C:/Xilinx/2025.1/Vitis/include/hls_fpo.h:140:
+In file included from C:/Xilinx/2025.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:150:
+C:/Xilinx/2025.1/Vitis/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+C:/Xilinx/2025.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+In file included from ../../../../conv1.cpp:2:
+In file included from C:/Users/cocol/Ruby_Proj/workspace/header/layer_dims.h:13:
+In file included from C:/Xilinx/2025.1/Vitis/include/ap_fixed.h:9:
+In file included from C:/Xilinx/2025.1/Vitis/include/etc/ap_common.h:677:
+In file included from C:/Xilinx/2025.1/Vitis/include/etc/ap_private.h:68:
+In file included from C:/Xilinx/2025.1/Vitis/include/hls_half.h:26:
+In file included from C:/Xilinx/2025.1/Vitis/include/etc/hls_half_fpo.h:19:
+In file included from C:/Xilinx/2025.1/Vitis/include/hls_fpo.h:140:
+In file included from C:/Xilinx/2025.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:150:
+C:/Xilinx/2025.1/Vitis/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+C:/Xilinx/2025.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+[synth] checked 512 values, 0 failures, worst severity 0.087 at [15][29]
+[synth] PASSED
+
+[idx0] checked 512 values, 0 failures, worst severity 0.181 at [5][29]
+[idx0] PASSED
+
+  MISMATCH oc=0 o=0 got=1.907227 exp=17.735214 diff=1.583e+01 tol=2.024e-01
+  MISMATCH oc=0 o=1 got=0.605469 exp=-23.861113 diff=2.447e+01 tol=2.636e-01
+  MISMATCH oc=0 o=2 got=-4.421875 exp=-11.312636 diff=6.891e+00 tol=1.381e-01
+  MISMATCH oc=0 o=3 got=1.921875 exp=15.894484 diff=1.397e+01 tol=1.839e-01
+  MISMATCH oc=0 o=4 got=-0.001953 exp=-0.966325 diff=9.644e-01 tol=3.466e-02
+  MISMATCH oc=0 o=5 got=0.246094 exp=-12.460632 diff=1.271e+01 tol=1.496e-01
+  MISMATCH oc=0 o=6 got=-2.339844 exp=-6.560643 diff=4.221e+00 tol=9.061e-02
+  MISMATCH oc=0 o=7 got=2.371094 exp=2.297977 diff=7.312e-02 tol=4.798e-02
+  MISMATCH oc=0 o=8 got=0.501953 exp=5.090509 diff=4.589e+00 tol=7.591e-02
+  MISMATCH oc=0 o=9 got=-5.271484 exp=-10.049801 diff=4.778e+00 tol=1.255e-01
+[max_range] checked 512 values, 411 failures, worst severity 240.055 at [3][16]
+[max_range] FAILED
+
+[first_intent] checked 512 values, 0 failures, worst severity 0.181 at [5][29]
+[first_intent] PASSED
+
+[ab156_intent] checked 512 values, 0 failures, worst severity 0.379 at [5][24]
+[ab156_intent] PASSED
+
+=================================================
+OVERALL: FAILED
+@E Simulation failed: Function 'main' returns nonzero value '1'.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+ERROR: 4
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 6 seconds. Total elapsed time: 35.341 seconds; peak allocated memory: 171.156 MB.

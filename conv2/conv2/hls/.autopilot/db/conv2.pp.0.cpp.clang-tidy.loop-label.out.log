@@ -1,0 +1,20 @@
+C:\Users\cocol\Ruby_Proj\workspace\conv2\conv2\hls\.autopilot\db\conv2.pp.0.cpp:212:5: warning: Added loop label VITIS_LOOP_16_1:   [xilinx-label-all-loops]
+    for (int oc = 0; oc < C2_OC; ++oc) {
+    ^~~
+    VITIS_LOOP_16_1: 
+C:\Users\cocol\Ruby_Proj\workspace\conv2\conv2\hls\.autopilot\db\conv2.pp.0.cpp:212:5: note: FIX-IT applied suggested code changes
+C:\Users\cocol\Ruby_Proj\workspace\conv2\conv2\hls\.autopilot\db\conv2.pp.0.cpp:213:9: warning: Added loop label VITIS_LOOP_17_2:   [xilinx-label-all-loops]
+        for (int o = 0; o < C2_OUT_LEN; ++o) {
+        ^~~
+        VITIS_LOOP_17_2: 
+C:\Users\cocol\Ruby_Proj\workspace\conv2\conv2\hls\.autopilot\db\conv2.pp.0.cpp:213:9: note: FIX-IT applied suggested code changes
+C:\Users\cocol\Ruby_Proj\workspace\conv2\conv2\hls\.autopilot\db\conv2.pp.0.cpp:216:13: warning: Added loop label VITIS_LOOP_20_3:   [xilinx-label-all-loops]
+            for (int ic = 0; ic < C2_IC; ++ic) {
+            ^~~
+            VITIS_LOOP_20_3: 
+C:\Users\cocol\Ruby_Proj\workspace\conv2\conv2\hls\.autopilot\db\conv2.pp.0.cpp:216:13: note: FIX-IT applied suggested code changes
+C:\Users\cocol\Ruby_Proj\workspace\conv2\conv2\hls\.autopilot\db\conv2.pp.0.cpp:217:17: warning: Added loop label VITIS_LOOP_21_4:   [xilinx-label-all-loops]
+                for (int k = 0; k < C2_K; ++k) {
+                ^~~
+                VITIS_LOOP_21_4: 
+C:\Users\cocol\Ruby_Proj\workspace\conv2\conv2\hls\.autopilot\db\conv2.pp.0.cpp:217:17: note: FIX-IT applied suggested code changes

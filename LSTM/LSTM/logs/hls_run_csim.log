@@ -1,0 +1,52 @@
+  **** HLS Build v2025.1 6135595
+INFO: [HLS 200-2005] Using work_dir C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM 
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component 'C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=LSTM.cpp' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file 'C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.cflags=-IC:/Users/cocol/Ruby_Proj/workspace/header' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(12)
+INFO: [HLS 200-1465] Applying config ini 'syn.csimflags=-IC:/Users/cocol/Ruby_Proj/workspace/header' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(13)
+INFO: [HLS 200-1465] Applying config ini 'tb.file=LSTM_TB.cpp' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM_TB.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./lstm_' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(10)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/cocol/Ruby_Proj/workspace/LSTM/lstm_' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.cflags=-IC:/Users/cocol/Ruby_Proj/workspace/header' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(14)
+INFO: [HLS 200-1465] Applying config ini 'syn.top=LSTM' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(11)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xc7z020clg400-1' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1465] Applying config ini 'clock=12ns' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(7)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(5)
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/vitis-comp.json
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../LSTM_TB.cpp in debug mode
+   Generating csim.exe
+[synth] checked 32 values, 0 failures, worst severity 0.010 at h[0], bounds 0
+[synth] PASSED
+
+[idx0] checked 32 values, 0 failures, worst severity 0.001 at h[1], bounds 0
+[idx0] PASSED
+
+[max_range] checked 32 values, 0 failures, worst severity 0.010 at h[23], bounds 0
+[max_range] PASSED
+
+[first_intent] checked 32 values, 0 failures, worst severity 0.001 at h[1], bounds 0
+[first_intent] PASSED
+
+[ab156_intent] checked 32 values, 0 failures, worst severity 0.003 at h[20], bounds 0
+[ab156_intent] PASSED
+
+=================================================
+OVERALL: PASSED
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 2 seconds. Total elapsed time: 8.027 seconds; peak allocated memory: 171.145 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 14s

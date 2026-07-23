@@ -1,0 +1,21 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_relu_max_1_ir
+Args:            
+  - Callee:          'relu_max_1(float const (*) [32], float (*) [16])'
+    DebugLoc:        { File: relu_max_1.cpp, Line: 6, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_relu_max_1_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        POOL
+  - String:          '> at '
+  - LoopLoc:         'relu_max_1.cpp:9:15'
+  - String:          ' '
+...

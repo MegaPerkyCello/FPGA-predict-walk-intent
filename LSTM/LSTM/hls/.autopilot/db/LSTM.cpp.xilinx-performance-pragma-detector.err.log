@@ -1,0 +1,309 @@
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:26:
+In file included from C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\cmath:8:
+In file included from C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\yvals.h:12:
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\yvals_core.h:908:1: error: static_assert failed "error STL1000: Unexpected compiler version, expected Clang 19.0.0 or newer."
+_EMIT_STL_ERROR(STL1000, "Unexpected compiler version, expected Clang 19.0.0 or newer.");
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\yvals_core.h:534:44: note: expanded from macro '_EMIT_STL_ERROR'
+#define _EMIT_STL_ERROR(NUMBER, MESSAGE)   static_assert(false, "error " #NUMBER ": " MESSAGE)
+                                           ^             ~~~~~
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:26:
+In file included from C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\cmath:12:
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\xtr1common:178:12: error: use of undeclared identifier '__builtin_is_constant_evaluated'; did you mean '_Is_constant_evaluated'?
+    return __builtin_is_constant_evaluated();
+           ^
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\xtr1common:177:27: note: '_Is_constant_evaluated' declared here
+_NODISCARD constexpr bool _Is_constant_evaluated() noexcept { // Internal function for any standard mode
+                          ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1057:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34: warning: unknown warning group '-Wmisleading-indentation', ignored [-Wunknown-warning-option]
+#pragma clang diagnostic ignored "-Wmisleading-indentation"
+                                 ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:779:55: error: expected ';' after expression
+  AP_INLINE AP_NODEBUG operator bool() const { return _AP_ROOT_op_get_bit(d_bv.V, d_index); }
+                                                      ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:646:39: note: expanded from macro '_AP_ROOT_op_get_bit'
+#define _AP_ROOT_op_get_bit(Val, Bit) _ssdm_op_get_bit(Val, Bit)
+                                      ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:562:17: note: expanded from macro '_ssdm_op_get_bit'
+    typeof(Val) __Val2__ = Val;                                      \
+                ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:779:55: error: use of undeclared identifier '__Val2__'
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:646:39: note: expanded from macro '_AP_ROOT_op_get_bit'
+#define _AP_ROOT_op_get_bit(Val, Bit) _ssdm_op_get_bit(Val, Bit)
+                                      ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:562:17: note: expanded from macro '_ssdm_op_get_bit'
+    typeof(Val) __Val2__ = Val;                                      \
+                ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\utils/x_hls_utils.h:297:17: note: in instantiation of function template specialization 'ap_bit_ref<1, false>::operator=<32, false>' requested here
+        sign[0] = data[31];
+                ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:779:55: error: use of undeclared identifier '__Val2__'
+  AP_INLINE AP_NODEBUG operator bool() const { return _AP_ROOT_op_get_bit(d_bv.V, d_index); }
+                                                      ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:646:39: note: expanded from macro '_AP_ROOT_op_get_bit'
+#define _AP_ROOT_op_get_bit(Val, Bit) _ssdm_op_get_bit(Val, Bit)
+                                      ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:563:53: note: expanded from macro '_ssdm_op_get_bit'
+    bool __Result__ = __builtin_bit_select((void*)(&__Val2__), Bit); \
+                                                    ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:779:55: error: use of undeclared identifier 'typeof'
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:646:39: note: expanded from macro '_AP_ROOT_op_get_bit'
+#define _AP_ROOT_op_get_bit(Val, Bit) _ssdm_op_get_bit(Val, Bit)
+                                      ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:562:5: note: expanded from macro '_ssdm_op_get_bit'
+    typeof(Val) __Val2__ = Val;                                      \
+    ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:845:38: note: in instantiation of member function 'ap_bit_ref<32, false>::operator bool' requested here
+    return operator=((ap_ulong)(bool)val);
+                                     ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\utils/x_hls_utils.h:297:17: note: in instantiation of function template specialization 'ap_bit_ref<1, false>::operator=<32, false>' requested here
+        sign[0] = data[31];
+                ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:809:3: error: template argument for template type parameter must be a type
+  ASSIGN_WITH_CTYPE(ap_ulong)
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:794:14: note: expanded from macro 'ASSIGN_WITH_CTYPE'
+    d_bv.V = _AP_ROOT_op_set_bit(d_bv.V, d_index, val); \
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:647:45: note: expanded from macro '_AP_ROOT_op_set_bit'
+#define _AP_ROOT_op_set_bit(Val, Bit, Repl) _ssdm_op_set_bit(Val, Bit, Repl)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:569:37: note: expanded from macro '_ssdm_op_set_bit'
+    typename _ap_type::remove_const<typeof(Val)>::type __Result__ = 0; \
+                                    ^~~~~~~~~~~
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\utils/x_hls_utils.h:297:17: note: in instantiation of function template specialization 'ap_bit_ref<1, false>::operator=<32, false>' requested here
+        sign[0] = data[31];
+                ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:223:20: note: template parameter is declared here
+template <typename _Tp>
+                   ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:809:3: error: expected a qualified name after 'typename'
+  ASSIGN_WITH_CTYPE(ap_ulong)
+  ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:794:14: note: expanded from macro 'ASSIGN_WITH_CTYPE'
+    d_bv.V = _AP_ROOT_op_set_bit(d_bv.V, d_index, val); \
+             ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:647:45: note: expanded from macro '_AP_ROOT_op_set_bit'
+#define _AP_ROOT_op_set_bit(Val, Bit, Repl) _ssdm_op_set_bit(Val, Bit, Repl)
+                                            ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:569:51: note: expanded from macro '_ssdm_op_set_bit'
+    typename _ap_type::remove_const<typeof(Val)>::type __Result__ = 0; \
+                                                  ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:809:3: error: unknown type name 'type'
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:794:14: note: expanded from macro 'ASSIGN_WITH_CTYPE'
+    d_bv.V = _AP_ROOT_op_set_bit(d_bv.V, d_index, val); \
+             ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:647:45: note: expanded from macro '_AP_ROOT_op_set_bit'
+#define _AP_ROOT_op_set_bit(Val, Bit, Repl) _ssdm_op_set_bit(Val, Bit, Repl)
+                                            ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:569:51: note: expanded from macro '_ssdm_op_set_bit'
+    typename _ap_type::remove_const<typeof(Val)>::type __Result__ = 0; \
+                                                  ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:809:3: error: expected ';' after expression
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:794:14: note: expanded from macro 'ASSIGN_WITH_CTYPE'
+    d_bv.V = _AP_ROOT_op_set_bit(d_bv.V, d_index, val); \
+             ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:647:45: note: expanded from macro '_AP_ROOT_op_set_bit'
+#define _AP_ROOT_op_set_bit(Val, Bit, Repl) _ssdm_op_set_bit(Val, Bit, Repl)
+                                            ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:570:17: note: expanded from macro '_ssdm_op_set_bit'
+    typeof(Val) __Val2__ = Val;                                        \
+                ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:809:3: error: use of undeclared identifier '__Val2__'
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:794:14: note: expanded from macro 'ASSIGN_WITH_CTYPE'
+    d_bv.V = _AP_ROOT_op_set_bit(d_bv.V, d_index, val); \
+             ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:647:45: note: expanded from macro '_AP_ROOT_op_set_bit'
+#define _AP_ROOT_op_set_bit(Val, Bit, Repl) _ssdm_op_set_bit(Val, Bit, Repl)
+                                            ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:570:17: note: expanded from macro '_ssdm_op_set_bit'
+    typeof(Val) __Val2__ = Val;                                        \
+                ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:809:3: error: expected ';' after expression
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:794:14: note: expanded from macro 'ASSIGN_WITH_CTYPE'
+    d_bv.V = _AP_ROOT_op_set_bit(d_bv.V, d_index, val); \
+             ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:647:45: note: expanded from macro '_AP_ROOT_op_set_bit'
+#define _AP_ROOT_op_set_bit(Val, Bit, Repl) _ssdm_op_set_bit(Val, Bit, Repl)
+                                            ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:571:18: note: expanded from macro '_ssdm_op_set_bit'
+    typeof(Repl) __Repl2__ = !!Repl;                                   \
+                 ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:809:3: error: use of undeclared identifier '__Repl2__'
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:794:14: note: expanded from macro 'ASSIGN_WITH_CTYPE'
+    d_bv.V = _AP_ROOT_op_set_bit(d_bv.V, d_index, val); \
+             ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:647:45: note: expanded from macro '_AP_ROOT_op_set_bit'
+#define _AP_ROOT_op_set_bit(Val, Bit, Repl) _ssdm_op_set_bit(Val, Bit, Repl)
+                                            ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:571:18: note: expanded from macro '_ssdm_op_set_bit'
+    typeof(Repl) __Repl2__ = !!Repl;                                   \
+                 ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:809:3: error: use of undeclared identifier '__Val2__'
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:794:14: note: expanded from macro 'ASSIGN_WITH_CTYPE'
+    d_bv.V = _AP_ROOT_op_set_bit(d_bv.V, d_index, val); \
+             ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:647:45: note: expanded from macro '_AP_ROOT_op_set_bit'
+#define _AP_ROOT_op_set_bit(Val, Bit, Repl) _ssdm_op_set_bit(Val, Bit, Repl)
+                                            ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:572:59: note: expanded from macro '_ssdm_op_set_bit'
+    __builtin_bit_part_set((void*)(&__Result__), (void*)(&__Val2__),   \
+                                                          ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:809:3: error: use of undeclared identifier '__Repl2__'
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:794:14: note: expanded from macro 'ASSIGN_WITH_CTYPE'
+    d_bv.V = _AP_ROOT_op_set_bit(d_bv.V, d_index, val); \
+             ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:647:45: note: expanded from macro '_AP_ROOT_op_set_bit'
+#define _AP_ROOT_op_set_bit(Val, Bit, Repl) _ssdm_op_set_bit(Val, Bit, Repl)
+                                            ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:573:37: note: expanded from macro '_ssdm_op_set_bit'
+                           (void*)(&__Repl2__), Bit, Bit);             \
+                                    ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:628:13: error: template argument for template type parameter must be a type
+    ret.V = _AP_ROOT_op_get_range(d_bv.V, l_index, h_index);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:648:44: note: expanded from macro '_AP_ROOT_op_get_range'
+#define _AP_ROOT_op_get_range(Val, Lo, Hi) _ssdm_op_get_range(Val, Lo, Hi)
+                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:578:37: note: expanded from macro '_ssdm_op_get_range'
+    typename _ap_type::remove_const<typeof(Val)>::type __Result__ = 0;      \
+                                    ^~~~~~~~~~~
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:382:22: note: in instantiation of function template specialization 'ap_int_base<32, false>::ap_int_base<32, false>' requested here
+    return operator=((const ap_int_base<_AP_W2, false>)val);
+                     ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\utils/x_hls_utils.h:298:17: note: in instantiation of function template specialization 'ap_range_ref<8, false>::operator=<32, false>' requested here
+        exp(7,0)= data(30,23);
+                ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:223:20: note: template parameter is declared here
+template <typename _Tp>
+                   ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:628:13: error: expected a qualified name after 'typename'
+    ret.V = _AP_ROOT_op_get_range(d_bv.V, l_index, h_index);
+            ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:648:44: note: expanded from macro '_AP_ROOT_op_get_range'
+#define _AP_ROOT_op_get_range(Val, Lo, Hi) _ssdm_op_get_range(Val, Lo, Hi)
+                                           ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:578:51: note: expanded from macro '_ssdm_op_get_range'
+    typename _ap_type::remove_const<typeof(Val)>::type __Result__ = 0;      \
+                                                  ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:628:13: error: unknown type name 'type'
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:648:44: note: expanded from macro '_AP_ROOT_op_get_range'
+#define _AP_ROOT_op_get_range(Val, Lo, Hi) _ssdm_op_get_range(Val, Lo, Hi)
+                                           ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:578:51: note: expanded from macro '_ssdm_op_get_range'
+    typename _ap_type::remove_const<typeof(Val)>::type __Result__ = 0;      \
+                                                  ^
+In file included from C:\Users\cocol\Ruby_Proj\workspace\LSTM\LSTM.cpp:1:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\hls_math.h:1053:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_hotbm_apfixed.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\ap_fixed.h:10:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_fixed_base.h:16:
+In file included from C:/Xilinx/2025.1/Vitis/common/technology/autopilot/ap_int.h:12:
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_int_ref.h:628:13: error: expected ';' after expression
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:648:44: note: expanded from macro '_AP_ROOT_op_get_range'
+#define _AP_ROOT_op_get_range(Val, Lo, Hi) _ssdm_op_get_range(Val, Lo, Hi)
+                                           ^
+C:/Xilinx/2025.1/Vitis/common/technology/autopilot\etc/ap_common.h:579:17: note: expanded from macro '_ssdm_op_get_range'
+    typeof(Val) __Val2__ = Val;                                             \
+                ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]

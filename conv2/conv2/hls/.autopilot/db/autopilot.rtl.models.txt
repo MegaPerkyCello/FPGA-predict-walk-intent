@@ -1,0 +1,4 @@
+conv2_1d_fadd_32ns_32ns_32_5_full_dsp_1
+conv2_1d_fmul_32ns_32ns_32_4_max_dsp_1
+conv2_1d_flow_control_loop_delay_pipe
+conv2_1d

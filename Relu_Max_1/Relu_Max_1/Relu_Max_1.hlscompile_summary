@@ -1,0 +1,245 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\Relu_Max_1\\Relu_Max_1.hlscompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "07/22/26 22:16:00",
+ "timestampMillis": "1784772960761",
+ "buildStep": {
+  "cmdId": "145c4304-9be2-4d06-8228-b87231a36921",
+  "name": "v++",
+  "logFile": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\Relu_Max_1\\logs\\Relu_Max_1.steps.log",
+  "commandLine": "C:/Xilinx/2025.1/Vitis/bin/unwrapped/win64.o/v++.exe  -c --mode hls --config C:\\Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\hls_config.cfg --work_dir Relu_Max_1 ",
+  "args": [
+   "-c",
+   "--mode",
+   "hls",
+   "--config",
+   "C:\\Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\hls_config.cfg",
+   "--work_dir",
+   "Relu_Max_1"
+  ],
+  "iniFiles": [
+   {
+    "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\hls_config.cfg",
+    "content": "part=xc7z020clg400-1\n\n[hls]\nflow_target=vivado\npackage.output.format=ip_catalog\npackage.output.syn=false\nclock=12ns\nsyn.file=relu_max_1.cpp\nsyn.top=relu_max_1\ntb.file=relu_max_1_TB.cpp\ntb.file=./pool1_goldens\nsyn.cflags=-IC:/Users/cocol/Ruby_Proj/workspace/header\nsyn.csimflags=-IC:/Users/cocol/Ruby_Proj/workspace/header\ntb.cflags=-IC:/Users/cocol/Ruby_Proj/workspace/header"
+   }
+  ],
+  "cwd": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:16:00",
+ "timestampMillis": "1784772960762",
+ "status": {
+  "cmdId": "145c4304-9be2-4d06-8228-b87231a36921",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "07/22/26 22:16:07",
+ "timestampMillis": "1784772967762",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "relu_max_1",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\relu_max_1.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "07/22/26 22:16:07",
+ "timestampMillis": "1784772967764",
+ "buildStep": {
+  "cmdId": "60c95b17-2ba4-4d10-ad18-50e8e5616d7c",
+  "name": "",
+  "logFile": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\Relu_Max_1\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:16:07",
+ "timestampMillis": "1784772967765",
+ "status": {
+  "cmdId": "60c95b17-2ba4-4d10-ad18-50e8e5616d7c",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:16:07",
+ "timestampMillis": "1784772967765",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\Relu_Max_1\\hls\\hls_data.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:16:07",
+ "timestampMillis": "1784772967766",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\Relu_Max_1\\hls\\syn\\report\\csynth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:16:07",
+ "timestampMillis": "1784772967767",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\Relu_Max_1\\hls\\syn\\report\\csynth.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:16:22",
+ "timestampMillis": "1784772982309",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\Relu_Max_1\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:16:22",
+ "timestampMillis": "1784772982310",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\Relu_Max_1\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:16:22",
+ "timestampMillis": "1784772982311",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\Relu_Max_1\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_SCHEDULE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:16:22",
+ "timestampMillis": "1784772982313",
+ "status": {
+  "cmdId": "60c95b17-2ba4-4d10-ad18-50e8e5616d7c",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:16:22",
+ "timestampMillis": "1784772982507",
+ "status": {
+  "cmdId": "145c4304-9be2-4d06-8228-b87231a36921",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:16:22",
+ "timestampMillis": "1784772982550",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\Relu_Max_1\\reports\\v++_compile_Relu_Max_1_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:16:22",
+ "timestampMillis": "1784772982551",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\Relu_Max_1\\reports\\.db\\v++_compile_Relu_Max_1_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

@@ -1,0 +1,156 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv2\\conv2\\conv2.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "07/22/26 22:10:51",
+ "timestampMillis": "1784772651143",
+ "buildStep": {
+  "cmdId": "5d29074f-060a-4c87-ae39-588daf5744f7",
+  "name": "vitis-run",
+  "logFile": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv2\\conv2\\logs\\conv2.steps.log",
+  "commandLine": "C:/Xilinx/2025.1/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --csim --config C:\\Users\\cocol\\Ruby_Proj\\workspace\\conv2\\hls_config.cfg --work_dir conv2 ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "C:\\Users\\cocol\\Ruby_Proj\\workspace\\conv2\\hls_config.cfg",
+   "--work_dir",
+   "conv2"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\conv2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:10:51",
+ "timestampMillis": "1784772651143",
+ "status": {
+  "cmdId": "5d29074f-060a-4c87-ae39-588daf5744f7",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "07/22/26 22:10:58",
+ "timestampMillis": "1784772658666",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "conv2_1d",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv2\\conv2.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "07/22/26 22:10:58",
+ "timestampMillis": "1784772658668",
+ "buildStep": {
+  "cmdId": "a5965805-07aa-4b1d-b78f-53f586bc39f4",
+  "name": "",
+  "logFile": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv2\\conv2\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\conv2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:10:58",
+ "timestampMillis": "1784772658669",
+ "status": {
+  "cmdId": "a5965805-07aa-4b1d-b78f-53f586bc39f4",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:11:02",
+ "timestampMillis": "1784772662039",
+ "status": {
+  "cmdId": "a5965805-07aa-4b1d-b78f-53f586bc39f4",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:11:02",
+ "timestampMillis": "1784772662254",
+ "status": {
+  "cmdId": "5d29074f-060a-4c87-ae39-588daf5744f7",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:11:02",
+ "timestampMillis": "1784772662255",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:11:02",
+ "timestampMillis": "1784772662256",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

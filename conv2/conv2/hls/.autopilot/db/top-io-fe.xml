@@ -1,0 +1,29 @@
+<root versionMajor = "1" versionMinor = "5">
+  <kernel src_name="conv2_1d" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
+    <args>
+      <arg id="0" access_type="r" src_name="inputs" src_type="float const *" src_isptr="1" src_bitwidth="32" src_size_or_depth="256">
+        <hw hw_usage="data" hw_interface="BRAM" hw_name="inputs" hw_bitwidth="32" hw_size_or_depth="256" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="1" access_type="w" src_name="outputs" src_type="float*" src_isptr="1" src_bitwidth="32" src_size_or_depth="512">
+        <hw hw_usage="data" hw_interface="BRAM" hw_name="outputs" hw_bitwidth="32" hw_size_or_depth="512" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="2" access_type="r" src_name="weights" src_type="float const *" src_isptr="1" src_bitwidth="32" src_size_or_depth="1536">
+        <hw hw_usage="data" hw_interface="BRAM" hw_name="weights" hw_bitwidth="32" hw_size_or_depth="1536" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="3" access_type="r" src_name="bias" src_type="float const *" src_isptr="1" src_bitwidth="32" src_size_or_depth="32">
+        <hw hw_usage="data" hw_interface="BRAM" hw_name="bias" hw_bitwidth="32" hw_size_or_depth="32" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0"/>
+        </hw>
+      </arg>
+    </args>
+    <return src_type="void" src_bitwidth="0" offset="0x0">
+      <hw hw_usage="data" hw_interface="" hw_name="" hw_bitwidth="0" hw_kernel_support="true"/>
+    </return>
+  </kernel>
+</root>

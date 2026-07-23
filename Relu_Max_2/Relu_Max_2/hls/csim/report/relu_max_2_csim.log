@@ -1,0 +1,24 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../relu_max_2_TB.cpp in debug mode
+   Compiling ../../../../relu_max_2.cpp in debug mode
+   Generating csim.exe
+[synth] checked 256 values, 0 failures, worst severity 0.000 at [-1][-1], selfcheck 0, negatives 0
+[synth] PASSED
+
+[idx0] checked 256 values, 0 failures, worst severity 0.000 at [-1][-1], selfcheck 0, negatives 0
+[idx0] PASSED
+
+[max_range] checked 256 values, 0 failures, worst severity 0.000 at [-1][-1], selfcheck 0, negatives 0
+[max_range] PASSED
+
+[first_intent] checked 256 values, 0 failures, worst severity 0.000 at [-1][-1], selfcheck 0, negatives 0
+[first_intent] PASSED
+
+[ab156_intent] checked 256 values, 0 failures, worst severity 0.000 at [-1][-1], selfcheck 0, negatives 0
+[ab156_intent] PASSED
+
+=================================================
+OVERALL: PASSED
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

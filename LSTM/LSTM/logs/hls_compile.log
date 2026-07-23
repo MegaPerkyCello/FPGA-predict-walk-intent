@@ -1,0 +1,303 @@
+  **** HLS Build v2025.1 6135595
+INFO: [HLS 200-2005] Using work_dir C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM 
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component 'C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=LSTM.cpp' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file 'C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.cflags=-IC:/Users/cocol/Ruby_Proj/workspace/header' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(12)
+INFO: [HLS 200-1465] Applying config ini 'syn.csimflags=-IC:/Users/cocol/Ruby_Proj/workspace/header' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(13)
+INFO: [HLS 200-1465] Applying config ini 'tb.file=LSTM_TB.cpp' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM_TB.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=./lstm_' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(10)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/cocol/Ruby_Proj/workspace/LSTM/lstm_' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.cflags=-IC:/Users/cocol/Ruby_Proj/workspace/header' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(14)
+INFO: [HLS 200-1465] Applying config ini 'syn.top=LSTM' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(11)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xc7z020clg400-1' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1465] Applying config ini 'clock=12ns' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(7)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from C:/Users/cocol/Ruby_Proj/workspace/LSTM/hls_config.cfg(5)
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/vitis-comp.json
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 3 seconds. CPU system time: 3 seconds. Elapsed time: 9.043 seconds; current allocated memory: 170.699 MB.
+INFO: [HLS 200-10] Analyzing design file 'LSTM.cpp' ... 
+WARNING: [HLS 207-1016] unknown warning group '-Wmisleading-indentation', ignored (C:/Xilinx/2025.1/Vitis/common/technology/autopilot/etc/hls_sqrt_apfixed.h:16:34)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 26.452 seconds; current allocated memory: 177.375 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 28,786 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,364 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,261 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,125 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 639 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 639 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 639 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 639 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 639 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 647 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 647 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,695 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,695 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,695 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,051 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 2,069 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/cocol/Ruby_Proj/workspace/LSTM/LSTM/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-131] Inlining function 'exp_reduce_::exp(float)' into 'hls::expf(float)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\c++\expfloat.cpp:22:9)
+INFO: [HLS 214-131] Inlining function 'hls::expf(float)' into 'sigmoid(float)' (LSTM.cpp:5:37)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::data() const (.35.45.54.65)' into 'fp_struct<float>::to_float() const (.32.42.51.62)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:322:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_float() const (.32.42.51.62)' into 'fp_struct<float>::to_ieee() const' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:346:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'float generic_copysign<float>(float, float)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_copysign.h:10:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_ieee() const' into 'float generic_copysign<float>(float, float)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_copysign.h:10:0)
+INFO: [HLS 214-178] Inlining function 'float generic_copysign<float>(float, float)' into 'float generic_fabs<float>(float)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_fabs.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_ieee() const' into 'float generic_nan<float>(char const*)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_nan.h:10:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'int generic_isnan<double>(double)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_isnan.h:16:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'int generic_isinf<double>(double)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_isinf.h:16:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::data() const (.96.106.116.134)' into 'fp_struct<double>::to_double() const (.93.103.113.131)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:494:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_double() const (.93.103.113.131)' into 'fp_struct<double>::to_ieee() const' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:509:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'double exp_reduce_::exp_generic<double>(double)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_exp_.h:157:0)
+INFO: [HLS 214-178] Inlining function 'int generic_isnan<double>(double)' into 'double exp_reduce_::exp_generic<double>(double)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_exp_.h:157:0)
+INFO: [HLS 214-178] Inlining function 'int generic_isinf<double>(double)' into 'double exp_reduce_::exp_generic<double>(double)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_exp_.h:157:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_ieee() const' into 'double exp_reduce_::exp_generic<double>(double)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_exp_.h:157:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::expv() const' into 'double exp_reduce_::exp_generic<double>(double)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_exp_.h:157:0)
+INFO: [HLS 214-178] Inlining function 'exp_reduce_::exp_traits<double>::exp_Z1P_m_1(ap_ufixed<51, -8, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'double exp_reduce_::exp_generic<double>(double)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_exp_.h:157:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'exp_reduce_::expm1(float)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib\hlsmath\src\common\hls_exp_float.cpp:7:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'float explog_based::generic_tanh<float>(float)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_tanh.h:28:0)
+INFO: [HLS 214-178] Inlining function 'float generic_fabs<float>(float)' into 'float explog_based::generic_tanh<float>(float)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_tanh.h:28:0)
+INFO: [HLS 214-178] Inlining function 'float generic_nan<float>(char const*)' into 'float explog_based::generic_tanh<float>(float)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_tanh.h:28:0)
+INFO: [HLS 214-178] Inlining function 'exp_reduce_::expm1(float)' into 'float explog_based::generic_tanh<float>(float)' (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_tanh.h:28:0)
+INFO: [HLS 214-178] Inlining function 'sigmoid(float)' into 'LSTM_step(float const (*) [32], float const (*) [32], float const*, float const (*) [32], float const (*) [32], float const*, float const (*) [32], float const (*) [32], float const*, float const (*) [32], float const (*) [32], float const*, float const*, float*, float*)' (LSTM.cpp:16:0)
+INFO: [HLS 214-178] Inlining function 'hls::tanh(float)' into 'LSTM_step(float const (*) [32], float const (*) [32], float const*, float const (*) [32], float const (*) [32], float const*, float const (*) [32], float const (*) [32], float const*, float const (*) [32], float const (*) [32], float const*, float const*, float*, float*)' (LSTM.cpp:16:0)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< GATES> at LSTM.cpp:20:12 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< UPDATE> at LSTM.cpp:48:13 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< INIT> at LSTM.cpp:65:11 
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_24_1' is marked as complete unroll implied by the pipeline pragma (LSTM.cpp:24:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_25_2' is marked as complete unroll implied by the pipeline pragma (LSTM.cpp:25:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_30_3' is marked as complete unroll implied by the pipeline pragma (LSTM.cpp:30:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_31_4' is marked as complete unroll implied by the pipeline pragma (LSTM.cpp:31:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_36_5' is marked as complete unroll implied by the pipeline pragma (LSTM.cpp:36:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_37_6' is marked as complete unroll implied by the pipeline pragma (LSTM.cpp:37:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_42_7' is marked as complete unroll implied by the pipeline pragma (LSTM.cpp:42:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_43_8' is marked as complete unroll implied by the pipeline pragma (LSTM.cpp:43:26)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_24_1' (LSTM.cpp:24:26) in function 'LSTM_step' completely with a factor of 32 (LSTM.cpp:16:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_25_2' (LSTM.cpp:25:26) in function 'LSTM_step' completely with a factor of 32 (LSTM.cpp:16:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_30_3' (LSTM.cpp:30:26) in function 'LSTM_step' completely with a factor of 32 (LSTM.cpp:16:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_31_4' (LSTM.cpp:31:26) in function 'LSTM_step' completely with a factor of 32 (LSTM.cpp:16:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_36_5' (LSTM.cpp:36:26) in function 'LSTM_step' completely with a factor of 32 (LSTM.cpp:16:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_37_6' (LSTM.cpp:37:26) in function 'LSTM_step' completely with a factor of 32 (LSTM.cpp:16:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_42_7' (LSTM.cpp:42:26) in function 'LSTM_step' completely with a factor of 32 (LSTM.cpp:16:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_43_8' (LSTM.cpp:43:26) in function 'LSTM_step' completely with a factor of 32 (LSTM.cpp:16:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 11.187 seconds; current allocated memory: 179.438 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.017 seconds; current allocated memory: 179.438 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.142 seconds; current allocated memory: 188.348 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.106 seconds; current allocated memory: 192.379 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_exp_.h:158:9) to (C:\scratch\2025.1\hls_product\640\2025.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_exp_.h:339:3) in function 'exp_reduce_::exp_generic<double>'... converting 10 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.47 seconds; current allocated memory: 216.590 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.36 seconds; current allocated memory: 268.539 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'LSTM' ...
+WARNING: [SYN 201-103] Legalizing function name 'exp_generic<double>' to 'exp_generic_double_s'.
+WARNING: [SYN 201-103] Legalizing function name 'generic_tanh<float>' to 'generic_tanh_float_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LSTM_Pipeline_INIT' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'INIT'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'INIT'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 272.457 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.017 seconds; current allocated memory: 273.516 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'exp_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln243) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining function 'exp_generic<double>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 22, function 'exp_generic<double>'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.097 seconds; current allocated memory: 275.684 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.047 seconds; current allocated memory: 275.816 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'generic_tanh_float_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'generic_tanh<float>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 60, function 'generic_tanh<float>'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 276.961 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.732 seconds; current allocated memory: 277.285 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LSTM_step_Pipeline_GATES' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'GATES'.
+WARNING: [HLS 200-885] The II Violation in module 'LSTM_step_Pipeline_GATES' (loop 'GATES'): Unable to schedule 'load' operation 32 bit ('W_g_load_1', LSTM.cpp:36) on array 'W_g' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'W_g'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'LSTM_step_Pipeline_GATES' (loop 'GATES'): Unable to schedule 'load' operation 32 bit ('W_g_load_3', LSTM.cpp:36) on array 'W_g' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'W_g'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'LSTM_step_Pipeline_GATES' (loop 'GATES'): Unable to schedule 'load' operation 32 bit ('W_g_load_5', LSTM.cpp:36) on array 'W_g' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'W_g'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'LSTM_step_Pipeline_GATES' (loop 'GATES'): Unable to schedule 'load' operation 32 bit ('W_g_load_7', LSTM.cpp:36) on array 'W_g' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'W_g'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'LSTM_step_Pipeline_GATES' (loop 'GATES'): Unable to schedule 'load' operation 32 bit ('W_g_load_21', LSTM.cpp:36) on array 'W_g' due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array 'W_g'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'LSTM_step_Pipeline_GATES' (loop 'GATES'): Unable to schedule 'load' operation 32 bit ('W_g_load_29', LSTM.cpp:36) on array 'W_g' due to limited memory ports (II = 15). Please consider using a memory core with more ports or partitioning the array 'W_g'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 387, loop 'GATES'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.292 seconds; current allocated memory: 294.527 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.846 seconds; current allocated memory: 297.660 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LSTM_step_Pipeline_UPDATE' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'UPDATE'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 77, loop 'UPDATE'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.598 seconds; current allocated memory: 298.738 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.041 seconds; current allocated memory: 298.738 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LSTM_step' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.138 seconds; current allocated memory: 300.086 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.119 seconds; current allocated memory: 300.988 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LSTM' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.172 seconds; current allocated memory: 301.398 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.056 seconds; current allocated memory: 301.578 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LSTM_Pipeline_INIT' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LSTM_Pipeline_INIT'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 302.852 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'exp_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'exp_generic_double_s_table_exp_Z1_ap_ufixed_58_1_ap_q_mode_5_ap_o_mode_3_0_array_ROM_AUTO_1R' to 'exp_generic_double_s_table_exp_Z1_ap_ufixed_58_1_ap_q_mode_5_ap_o_mode_3_0_arbkb' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'exp_generic_double_s_table_f_Z3_ap_ufixed_59_0_ap_q_mode_5_ap_o_mode_3_0_array_ROM_AUTO_1R' to 'exp_generic_double_s_table_f_Z3_ap_ufixed_59_0_ap_q_mode_5_ap_o_mode_3_0_arracud' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'exp_generic_double_s_table_f_Z2_ap_ufixed_59_0_ap_q_mode_5_ap_o_mode_3_0_array_ROM_AUTO_1R' to 'exp_generic_double_s_table_f_Z2_ap_ufixed_59_0_ap_q_mode_5_ap_o_mode_3_0_arradEe' due to the length limit 80
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_15ns_19s_31_4_0': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_13s_71s_71_5_0': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_43ns_36ns_79_2_0': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_49ns_44ns_93_2_0': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_50ns_50ns_99_2_0': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_64_1_0': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'exp_generic_double_s'.
+INFO: [RTMG 210-279] Implementing memory 'LSTM_exp_generic_double_s_table_exp_Z1_ap_ufixed_58_1_ap_q_mode_5_ap_o_mode_3_0_arbkb' using auto ROMs.
+INFO: [HLS 200-2168] Implementing memory 'LSTM_exp_generic_double_s_table_f_Z3_ap_ufixed_59_0_ap_q_mode_5_ap_o_mode_3_0_arracud' using auto ROMs with 2 copies to ensure enough ports to satisfy II or latency constraints.
+INFO: [RTMG 210-279] Implementing memory 'LSTM_exp_generic_double_s_table_f_Z2_ap_ufixed_59_0_ap_q_mode_5_ap_o_mode_3_0_arradEe' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.6 seconds; current allocated memory: 306.660 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'generic_tanh_float_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_12_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fpext_32ns_64_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fptrunc_64ns_32_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_5_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'generic_tanh_float_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 1.558 seconds; current allocated memory: 311.383 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LSTM_step_Pipeline_GATES' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'LSTM_step_Pipeline_GATES' pipeline 'GATES' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'LSTM_step_Pipeline_GATES' is 7267 from HDL expression: ((1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 17 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_12_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fexp_32ns_32ns_32_9_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LSTM_step_Pipeline_GATES'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.348 seconds; current allocated memory: 328.617 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LSTM_step_Pipeline_UPDATE' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'LSTM_step_Pipeline_UPDATE' pipeline 'UPDATE' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'LSTM_step_Pipeline_UPDATE' is 5014 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LSTM_step_Pipeline_UPDATE'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3 seconds. CPU system time: 4 seconds. Elapsed time: 6.032 seconds; current allocated memory: 364.285 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LSTM_step' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LSTM_step'.
+INFO: [RTMG 210-278] Implementing memory 'LSTM_LSTM_step_f_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.549 seconds; current allocated memory: 364.285 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LSTM' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/W_f' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/U_f' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/b_f' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/W_i' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/U_i' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/b_i' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/W_g' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/U_g' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/b_g' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/W_o' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/U_o' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/b_o' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/x' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/h' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM/c' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'LSTM' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LSTM'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.54 seconds; current allocated memory: 364.285 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 3.126 seconds; current allocated memory: 366.668 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 2 seconds. CPU system time: 2 seconds. Elapsed time: 4.383 seconds; current allocated memory: 379.637 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for LSTM.
+INFO: [VLOG 209-307] Generating Verilog RTL for LSTM.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 114.23 MHz
+INFO: [HLS 200-112] Total CPU user time: 16 seconds. Total CPU system time: 11 seconds. Total elapsed time: 74.343 seconds; peak allocated memory: 379.676 MB.
+INFO: [v++ 60-791] Total elapsed time: 0h 1m 19s

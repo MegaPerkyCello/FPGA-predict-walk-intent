@@ -1,0 +1,89 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_conv1_1d_ir
+Args:            
+  - Callee:          'conv1_1d(float const (*) [32], float (*) [32], float const (*) [2][5], float const*)'
+    DebugLoc:        { File: conv1.cpp, Line: 9, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_conv1_1d_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_16_2
+  - String:          '> at '
+  - LoopLoc:         'conv1.cpp:16:26'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: conv1.cpp, Line: 19, Column: 30 }
+Function:        _Z8conv1_1dPA32_KfPA32_fPA2_A5_S_PS_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_19_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: conv1.cpp, Line: 20, Column: 34 }
+Function:        _Z8conv1_1dPA32_KfPA32_fPA2_A5_S_PS_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_20_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: conv1.cpp, Line: 9, Column: 0 }
+Function:        _Z8conv1_1dPA32_KfPA32_fPA2_A5_S_PS_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_19_3
+  - String:          ''' ('
+  - LoopLoc:         'conv1.cpp:19:30'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1_1d
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: conv1.cpp, Line: 9, Column: 0 }
+Function:        _Z8conv1_1dPA32_KfPA32_fPA2_A5_S_PS_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_20_4
+  - String:          ''' ('
+  - LoopLoc:         'conv1.cpp:20:34'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1_1d
+  - String:          ''' completely with a factor of '
+  - Factor:          '5'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: conv1.cpp, Line: 9, Column: 0 }
+Function:        _Z8conv1_1dPA32_KfPA32_fPA2_A5_S_PS_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_20_4
+  - String:          ''' ('
+  - LoopLoc:         'conv1.cpp:20:34'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1_1d
+  - String:          ''' completely with a factor of '
+  - Factor:          '5'
+...

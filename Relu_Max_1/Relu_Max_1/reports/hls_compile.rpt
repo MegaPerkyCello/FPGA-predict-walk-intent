@@ -1,0 +1,123 @@
+
+
+================================================================
+== Synthesis Summary Report of 'relu_max_1'
+================================================================
++ General Information: 
+    * Date:           Wed Jul 22 22:16:20 2026
+    * Version:        2025.1 (Build 6135595 on May 21 2025)
+    * Project:        Relu_Max_1
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |    Modules   | Issue|      |       Latency       | Iteration|         | Trip |          |      |    |           |           |     |
+    |    & Loops   | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT    | URAM|
+    +--------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |+ relu_max_1  |     -|  0.07|      262|  3.144e+03|         -|      256|     -|    rewind|     -|   -|  333 (~0%)|  457 (~0%)|    -|
+    | o CH_POOL    |     -|  8.76|      260|  3.120e+03|         6|        1|   256|       yes|     -|   -|          -|          -|    -|
+    +--------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++-------------------+-----------+----------+
+| Port              | Direction | Bitwidth |
++-------------------+-----------+----------+
+| input_r_address0  | out       | 9        |
+| input_r_address1  | out       | 9        |
+| input_r_q0        | in        | 32       |
+| input_r_q1        | in        | 32       |
+| output_r_address0 | out       | 8        |
+| output_r_d0       | out       | 32       |
++-------------------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+---------------+
+| Argument | Direction | Datatype      |
++----------+-----------+---------------+
+| input    | in        | float const * |
+| output   | out       | float*        |
++----------+-----------+---------------+
+
+* SW-to-HW Mapping
++----------+-------------------+---------+----------+
+| Argument | HW Interface      | HW Type | HW Usage |
++----------+-------------------+---------+----------+
+| input    | input_r_address0  | port    | offset   |
+| input    | input_r_ce0       | port    |          |
+| input    | input_r_q0        | port    |          |
+| input    | input_r_address1  | port    | offset   |
+| input    | input_r_ce1       | port    |          |
+| input    | input_r_q1        | port    |          |
+| output   | output_r_address0 | port    | offset   |
+| output   | output_r_ce0      | port    |          |
+| output   | output_r_we0      | port    |          |
+| output   | output_r_d0       | port    |          |
++----------+-------------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------------+-----+--------+-------------+--------+----------+---------+
+| Name                             | DSP | Pragma | Variable    | Op     | Impl     | Latency |
++----------------------------------+-----+--------+-------------+--------+----------+---------+
+| + relu_max_1                     | 0   |        |             |        |          |         |
+|   add_ln8_fu_159_p2              |     |        | add_ln8     | add    | fabric   | 0       |
+|   select_ln8_fu_165_p3           |     |        | select_ln8  | select | auto_sel | 0       |
+|   r_fu_173_p3                    |     |        | r           | select | auto_sel | 0       |
+|   add_ln13_fu_405_p2             |     |        | add_ln13    | add    | fabric   | 0       |
+|   icmp_ln12_fu_296_p2            |     |        | icmp_ln12   | setne  | auto     | 0       |
+|   icmp_ln12_1_fu_302_p2          |     |        | icmp_ln12_1 | seteq  | auto     | 0       |
+|   or_ln12_fu_320_p2              |     |        | or_ln12     | or     | auto     | 0       |
+|   icmp_ln12_2_fu_308_p2          |     |        | icmp_ln12_2 | setne  | auto     | 0       |
+|   icmp_ln12_3_fu_314_p2          |     |        | icmp_ln12_3 | seteq  | auto     | 0       |
+|   or_ln12_1_fu_324_p2            |     |        | or_ln12_1   | or     | auto     | 0       |
+|   and_ln12_fu_328_p2             |     |        | and_ln12    | and    | auto     | 0       |
+|   fcmp_32ns_32ns_1_2_no_dsp_1_U1 |     |        | tmp_2       | fcmp   | auto     | 1       |
+|   and_ln12_1_fu_334_p2           |     |        | and_ln12_1  | and    | auto     | 0       |
+|   m_fu_340_p3                    |     |        | m           | select | auto_sel | 0       |
+|   icmp_ln13_fu_363_p2            |     |        | icmp_ln13   | setne  | auto     | 0       |
+|   icmp_ln13_1_fu_369_p2          |     |        | icmp_ln13_1 | seteq  | auto     | 0       |
+|   or_ln13_fu_375_p2              |     |        | or_ln13     | or     | auto     | 0       |
+|   fcmp_32ns_32ns_1_2_no_dsp_1_U2 |     |        | tmp_4       | fcmp   | auto     | 1       |
+|   and_ln13_fu_381_p2             |     |        | and_ln13    | and    | auto     | 0       |
+|   select_ln13_fu_387_p3          |     |        | select_ln13 | select | auto_sel | 0       |
+|   o_fu_219_p2                    |     |        | o           | add    | fabric   | 0       |
+|   add_ln8_1_fu_225_p2            |     |        | add_ln8_1   | add    | fabric   | 0       |
+|   icmp_ln9_fu_231_p2             |     |        | icmp_ln9    | seteq  | auto     | 0       |
+|   icmp_ln8_fu_237_p2             |     |        | icmp_ln8    | seteq  | auto     | 0       |
++----------------------------------+-----+--------+-------------+--------+----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+  No pragmas found
+

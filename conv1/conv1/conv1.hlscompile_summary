@@ -1,0 +1,245 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv1\\conv1\\conv1.hlscompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "07/22/26 22:06:08",
+ "timestampMillis": "1784772368224",
+ "buildStep": {
+  "cmdId": "ad0ad1d1-022e-4f6a-b7c9-ede291112eea",
+  "name": "v++",
+  "logFile": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv1\\conv1\\logs\\conv1.steps.log",
+  "commandLine": "C:/Xilinx/2025.1/Vitis/bin/unwrapped/win64.o/v++.exe  -c --mode hls --config C:\\Users\\cocol\\Ruby_Proj\\workspace\\conv1\\hls_config.cfg --work_dir conv1 ",
+  "args": [
+   "-c",
+   "--mode",
+   "hls",
+   "--config",
+   "C:\\Users\\cocol\\Ruby_Proj\\workspace\\conv1\\hls_config.cfg",
+   "--work_dir",
+   "conv1"
+  ],
+  "iniFiles": [
+   {
+    "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv1\\hls_config.cfg",
+    "content": "part=xc7z020clg400-1\n\n[hls]\nflow_target=vivado\npackage.output.format=ip_catalog\npackage.output.syn=false\nsyn.file=conv1.cpp\ntb.file=conv1TB.cpp\ntb.file=./conv1_goldens\nclock=12ns\nsyn.top=conv1_1d\nsyn.cflags=-IC:/Users/cocol/Ruby_Proj/workspace/header\nsyn.csimflags=-IC:\\Users\\cocol\\Ruby_Proj\\workspace\\header\ntb.cflags=-IC:/Users/cocol/Ruby_Proj/workspace/header"
+   }
+  ],
+  "cwd": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\conv1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:06:08",
+ "timestampMillis": "1784772368225",
+ "status": {
+  "cmdId": "ad0ad1d1-022e-4f6a-b7c9-ede291112eea",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "07/22/26 22:06:12",
+ "timestampMillis": "1784772372348",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "conv1_1d",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv1\\conv1.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "07/22/26 22:06:12",
+ "timestampMillis": "1784772372349",
+ "buildStep": {
+  "cmdId": "ff0c817e-4bbc-4fe2-aa88-aa9474448d9d",
+  "name": "",
+  "logFile": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv1\\conv1\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\conv1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:06:12",
+ "timestampMillis": "1784772372350",
+ "status": {
+  "cmdId": "ff0c817e-4bbc-4fe2-aa88-aa9474448d9d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:06:12",
+ "timestampMillis": "1784772372350",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv1\\conv1\\hls\\hls_data.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:06:12",
+ "timestampMillis": "1784772372351",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv1\\conv1\\hls\\syn\\report\\csynth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:06:12",
+ "timestampMillis": "1784772372351",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv1\\conv1\\hls\\syn\\report\\csynth.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:06:28",
+ "timestampMillis": "1784772388727",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv1\\conv1\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:06:28",
+ "timestampMillis": "1784772388729",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv1\\conv1\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:06:28",
+ "timestampMillis": "1784772388730",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv1\\conv1\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_SCHEDULE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:06:28",
+ "timestampMillis": "1784772388731",
+ "status": {
+  "cmdId": "ff0c817e-4bbc-4fe2-aa88-aa9474448d9d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:06:29",
+ "timestampMillis": "1784772389004",
+ "status": {
+  "cmdId": "ad0ad1d1-022e-4f6a-b7c9-ede291112eea",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:06:29",
+ "timestampMillis": "1784772389068",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv1\\conv1\\reports\\v++_compile_conv1_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:06:29",
+ "timestampMillis": "1784772389072",
+ "report": {
+  "path": "C:/Users\\cocol\\Ruby_Proj\\workspace\\conv1\\conv1\\reports\\.db\\v++_compile_conv1_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

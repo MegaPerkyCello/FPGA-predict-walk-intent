@@ -1,0 +1,18 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="conv1_1d" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=conv1_1d" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="conv1.cpp:19:30" msg_body="Loop 'VITIS_LOOP_19_3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_19_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="conv1.cpp:20:34" msg_body="Loop 'VITIS_LOOP_20_4' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_20_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="conv1.cpp:9:0" msg_body="Unrolling loop 'VITIS_LOOP_19_3' (conv1.cpp:19:30) in function 'conv1_1d' completely with a factor of 2">
+        <args Factor="2" LoopLoc="conv1.cpp:19:30" LoopName="VITIS_LOOP_19_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="conv1.cpp:9:0" msg_body="Unrolling loop 'VITIS_LOOP_20_4' (conv1.cpp:20:34) in function 'conv1_1d' completely with a factor of 5">
+        <args Factor="5" LoopLoc="conv1.cpp:20:34" LoopName="VITIS_LOOP_20_4"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

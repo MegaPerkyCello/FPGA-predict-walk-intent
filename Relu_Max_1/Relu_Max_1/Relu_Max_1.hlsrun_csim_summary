@@ -1,0 +1,156 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\Relu_Max_1\\Relu_Max_1.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "07/22/26 22:15:35",
+ "timestampMillis": "1784772935728",
+ "buildStep": {
+  "cmdId": "05c7f67a-57a2-4765-b867-8da157723f2e",
+  "name": "vitis-run",
+  "logFile": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\Relu_Max_1\\logs\\Relu_Max_1.steps.log",
+  "commandLine": "C:/Xilinx/2025.1/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --csim --config C:\\Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\hls_config.cfg --work_dir Relu_Max_1 ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "C:\\Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\hls_config.cfg",
+   "--work_dir",
+   "Relu_Max_1"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:15:35",
+ "timestampMillis": "1784772935729",
+ "status": {
+  "cmdId": "05c7f67a-57a2-4765-b867-8da157723f2e",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "07/22/26 22:15:39",
+ "timestampMillis": "1784772939813",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "relu_max_1",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\relu_max_1.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "07/22/26 22:15:39",
+ "timestampMillis": "1784772939814",
+ "buildStep": {
+  "cmdId": "d18cb442-cfc8-4c9a-bb72-26eeac6ccb50",
+  "name": "",
+  "logFile": "C:/Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1\\Relu_Max_1\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\Relu_Max_1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:15:39",
+ "timestampMillis": "1784772939814",
+ "status": {
+  "cmdId": "d18cb442-cfc8-4c9a-bb72-26eeac6ccb50",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:15:42",
+ "timestampMillis": "1784772942249",
+ "status": {
+  "cmdId": "d18cb442-cfc8-4c9a-bb72-26eeac6ccb50",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "07/22/26 22:15:42",
+ "timestampMillis": "1784772942496",
+ "status": {
+  "cmdId": "05c7f67a-57a2-4765-b867-8da157723f2e",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:15:42",
+ "timestampMillis": "1784772942497",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "07/22/26 22:15:42",
+ "timestampMillis": "1784772942497",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

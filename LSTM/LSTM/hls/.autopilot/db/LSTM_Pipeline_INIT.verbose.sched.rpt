@@ -1,0 +1,136 @@
+
+
+================================================================
+== Vitis HLS Report for 'LSTM_Pipeline_INIT'
+================================================================
+* Date:           Wed Jul 22 22:22:15 2026
+
+* Version:        2025.1 (Build 6135595 on May 21 2025)
+* Project:        LSTM
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  12.00 ns|  6.667 ns|     3.24 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |       34|       34|  0.408 us|  0.408 us|   33|   33|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- INIT    |       32|       32|         1|          1|          1|    32|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 6.66>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%j = alloca i32 1" [LSTM.cpp:65]   --->   Operation 4 'alloca' 'j' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %c, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 5 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %h, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.58ns)   --->   "%store_ln65 = store i6 0, i6 %j" [LSTM.cpp:65]   --->   Operation 7 'store' 'store_ln65' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc"   --->   Operation 8 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%j_3 = load i6 %j" [LSTM.cpp:65]   --->   Operation 9 'load' 'j_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (1.82ns)   --->   "%icmp_ln65 = icmp_eq  i6 %j_3, i6 32" [LSTM.cpp:65]   --->   Operation 10 'icmp' 'icmp_ln65' <Predicate = true> <Delay = 1.82> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 11 [1/1] (1.82ns)   --->   "%add_ln65 = add i6 %j_3, i6 1" [LSTM.cpp:65]   --->   Operation 11 'add' 'add_ln65' <Predicate = true> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%br_ln65 = br i1 %icmp_ln65, void %for.inc.split, void %for.inc9.preheader.exitStub" [LSTM.cpp:65]   --->   Operation 12 'br' 'br_ln65' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%zext_ln65 = zext i6 %j_3" [LSTM.cpp:65]   --->   Operation 13 'zext' 'zext_ln65' <Predicate = (!icmp_ln65)> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specpipeline_ln65 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_0" [LSTM.cpp:65]   --->   Operation 14 'specpipeline' 'specpipeline_ln65' <Predicate = (!icmp_ln65)> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%speclooptripcount_ln65 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 32, i64 32, i64 32" [LSTM.cpp:65]   --->   Operation 15 'speclooptripcount' 'speclooptripcount_ln65' <Predicate = (!icmp_ln65)> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specloopname_ln65 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3" [LSTM.cpp:65]   --->   Operation 16 'specloopname' 'specloopname_ln65' <Predicate = (!icmp_ln65)> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%h_addr = getelementptr i32 %h, i64 0, i64 %zext_ln65" [LSTM.cpp:66]   --->   Operation 17 'getelementptr' 'h_addr' <Predicate = (!icmp_ln65)> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] ( I:3.25ns O:3.25ns )   --->   "%store_ln66 = store i32 0, i5 %h_addr" [LSTM.cpp:66]   --->   Operation 18 'store' 'store_ln66' <Predicate = (!icmp_ln65)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%c_addr = getelementptr i32 %c, i64 0, i64 %zext_ln65" [LSTM.cpp:67]   --->   Operation 19 'getelementptr' 'c_addr' <Predicate = (!icmp_ln65)> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] ( I:3.25ns O:3.25ns )   --->   "%store_ln67 = store i32 0, i5 %c_addr" [LSTM.cpp:67]   --->   Operation 20 'store' 'store_ln67' <Predicate = (!icmp_ln65)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_1 : Operation 21 [1/1] (1.58ns)   --->   "%store_ln65 = store i6 %add_ln65, i6 %j" [LSTM.cpp:65]   --->   Operation 21 'store' 'store_ln65' <Predicate = (!icmp_ln65)> <Delay = 1.58>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%br_ln65 = br void %for.inc" [LSTM.cpp:65]   --->   Operation 22 'br' 'br_ln65' <Predicate = (!icmp_ln65)> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (1.58ns)   --->   "%ret_ln0 = ret"   --->   Operation 23 'ret' 'ret_ln0' <Predicate = (icmp_ln65)> <Delay = 1.58>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 12.000ns, clock uncertainty: 3.240ns.
+
+ <State 1>: 6.667ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln65', LSTM.cpp:65) of constant 0 on local variable 'j', LSTM.cpp:65 [6]  (1.588 ns)
+	'load' operation 6 bit ('j', LSTM.cpp:65) on local variable 'j', LSTM.cpp:65 [9]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln65', LSTM.cpp:65) [10]  (1.825 ns)
+	'store' operation 0 bit ('store_ln66', LSTM.cpp:66) of constant 0 on array 'h' [19]  (3.254 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

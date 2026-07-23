@@ -1,0 +1,6 @@
+pip install -r requirements.txt
+
+footdrop_env\Scripts\activate
+python extract_dataset_sliding.py
+
+

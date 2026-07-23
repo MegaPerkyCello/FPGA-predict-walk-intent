@@ -1,0 +1,91 @@
+{
+  "config": {
+    "RAW_RATE": 1000,
+    "TARGET_RATE": 100,
+    "DECIM": 10,
+    "WINDOW_MS": 320,
+    "WINDOW_SAMPLES": 32,
+    "STRIDE_SAMPLES": 1,
+    "CAUSAL": true,
+    "RECTIFY": "full",
+    "FILTER_ORDER": 4,
+    "ENVELOPE_LP_HZ": 40.0,
+    "GYRO_LP_HZ": 30.0,
+    "LATE_STANCE_FRACTION": 0.5,
+    "PRE_TOEOFF_MARGIN_MS": 50,
+    "POSITIVE_OVERLAP_THRESHOLD": 0.6,
+    "NEGATIVE_OVERLAP_THRESHOLD": 0.1,
+    "DISCARD_AMBIGUOUS": true,
+    "MIN_STANCE_MS": 300,
+    "MAX_STANCE_MS": 2000,
+    "MAX_NEG_TO_POS_RATIO": 3.0,
+    "channels": [
+      "TA_envelope_causal",
+      "Shank_Gy_causal"
+    ]
+  },
+  "summary": {
+    "total_windows": 315652,
+    "intent_windows": 78913,
+    "non_intent_windows": 236739,
+    "X_shape": [
+      315652,
+      2,
+      32
+    ],
+    "subjects": [
+      "AB156",
+      "AB185",
+      "AB186",
+      "AB188",
+      "AB189",
+      "AB190",
+      "AB191",
+      "AB192",
+      "AB193",
+      "AB194"
+    ]
+  },
+  "per_subject": {
+    "AB156": {
+      "positive": 8777,
+      "negative": 67856
+    },
+    "AB185": {
+      "positive": 9444,
+      "negative": 71602
+    },
+    "AB186": {
+      "positive": 7547,
+      "negative": 60881
+    },
+    "AB188": {
+      "positive": 7060,
+      "negative": 65027
+    },
+    "AB189": {
+      "positive": 9071,
+      "negative": 75378
+    },
+    "AB190": {
+      "positive": 5659,
+      "negative": 53718
+    },
+    "AB191": {
+      "positive": 4470,
+      "negative": 59258
+    },
+    "AB192": {
+      "positive": 7547,
+      "negative": 74341
+    },
+    "AB193": {
+      "positive": 8646,
+      "negative": 83990
+    },
+    "AB194": {
+      "positive": 10692,
+      "negative": 80729
+    }
+  }
+}

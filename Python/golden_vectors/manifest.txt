@@ -1,0 +1,6 @@
+# case            source
+idx0            first window: idx 0, subj AB186, label 1  | logit=4.89841  p=0.9926
+first_intent    first intent (label 1): idx 0, subj AB186, label 1  | logit=4.89841  p=0.9926
+ab156_intent    AB156 intent (different subject, small range): idx 62, subj AB156, label 1  | logit=2.35537  p=0.9134
+max_range       largest |x| (accumulator stress): idx 10104, subj AB192, label 0  | logit=-6.28201  p=0.0019
+synth           synthetic seeded-random (rng=42)  | logit=-1.92362  p=0.1275

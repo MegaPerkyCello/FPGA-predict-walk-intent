@@ -1,0 +1,27 @@
+Positives: 72817, Negatives: 222966, pos_weight: 3.06
+Epoch 1/50  Train loss: 0.2667  Val loss: 0.2067  F1: 0.915  Precision: 0.854  Recall: 0.985
+  → New best model saved (F1: 0.915)
+Epoch 2/50  Train loss: 0.2035  Val loss: 0.2088  F1: 0.915  Precision: 0.859  Recall: 0.980
+  → New best model saved (F1: 0.915)
+Epoch 3/50  Train loss: 0.1910  Val loss: 0.2099  F1: 0.918  Precision: 0.872  Recall: 0.969
+  → New best model saved (F1: 0.918)
+Epoch 4/50  Train loss: 0.1822  Val loss: 0.1815  F1: 0.925  Precision: 0.869  Recall: 0.988
+  → New best model saved (F1: 0.925)
+Epoch 5/50  Train loss: 0.1749  Val loss: 0.2014  F1: 0.917  Precision: 0.864  Recall: 0.978
+Epoch 6/50  Train loss: 0.1709  Val loss: 0.2095  F1: 0.919  Precision: 0.877  Recall: 0.966
+Epoch 7/50  Train loss: 0.1656  Val loss: 0.2077  F1: 0.918  Precision: 0.873  Recall: 0.968
+Epoch 8/50  Train loss: 0.1609  Val loss: 0.1998  F1: 0.921  Precision: 0.873  Recall: 0.974
+Epoch 9/50  Train loss: 0.1580  Val loss: 0.2102  F1: 0.916  Precision: 0.865  Recall: 0.973
+Epoch 10/50  Train loss: 0.1550  Val loss: 0.2148  F1: 0.916  Precision: 0.876  Recall: 0.961
+Epoch 11/50  Train loss: 0.1508  Val loss: 0.2078  F1: 0.920  Precision: 0.877  Recall: 0.968
+Epoch 12/50  Train loss: 0.1484  Val loss: 0.2207  F1: 0.917  Precision: 0.875  Recall: 0.963
+Epoch 13/50  Train loss: 0.1466  Val loss: 0.2320  F1: 0.913  Precision: 0.876  Recall: 0.953
+Epoch 14/50  Train loss: 0.1439  Val loss: 0.2105  F1: 0.923  Precision: 0.879  Recall: 0.971
+Epoch 15/50  Train loss: 0.1420  Val loss: 0.2069  F1: 0.921  Precision: 0.879  Recall: 0.967
+Epoch 16/50  Train loss: 0.1400  Val loss: 0.2022  F1: 0.922  Precision: 0.874  Recall: 0.975
+Epoch 17/50  Train loss: 0.1400  Val loss: 0.2226  F1: 0.913  Precision: 0.867  Recall: 0.963
+Epoch 18/50  Train loss: 0.1369  Val loss: 0.2347  F1: 0.915  Precision: 0.880  Recall: 0.954
+Epoch 19/50  Train loss: 0.1354  Val loss: 0.2011  F1: 0.926  Precision: 0.889  Recall: 0.967
+  → New best model saved (F1: 0.926)
+Epoch 20/50  Train loss: 0.1334  Val loss: 0.2273  F1: 0.917  Precision: 0.874  Recall: 0.964
+Epoch 21/50  Train loss: 0.1339  Val loss: 0.2254  F1: 0.921  Precision: 0.883  Recall: 0.963

@@ -1,0 +1,25 @@
+=======================================================
+EXTRACTION COMPLETE (sliding window)
+=======================================================
+  Total windows:  336348
+  Intent (1):     84087
+  Non-intent (0): 252261
+  X shape:        (336348, 2, 300)
+  Saved to:       C:\Users\cocol\OneDrive - Massachusetts Institute of Technology\Ruby Proj\Datasets\enabl3s_dataset_sliding/
+
+  Output files:
+    inputs.npy       (N, 2, 300)  -- ch0=TA_envelope, ch1=Shank_Gy
+    labels.npy       (N,)               -- 1=intent, 0=no_intent
+    subject_ids.npy  (N,)               -- subject ID per window
+    meta.json
+
+  Load in PyTorch:
+    inputs      = np.load('enabl3s_dataset_sliding/inputs.npy')
+    labels      = np.load('enabl3s_dataset_sliding/labels.npy')
+    subject_ids = np.load('enabl3s_dataset_sliding/subject_ids.npy', allow_pickle=True)
+
+  Leave-one-subject-out example:
+    val_mask   = (subject_ids == 'AB156')
+    train_mask = ~val_mask
+    train_X, train_y = inputs[train_mask], labels[train_mask]
+    val_X,   val_y   = inputs[val_mask],   labels[val_mask]

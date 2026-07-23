@@ -1,0 +1,28 @@
+VAL_SUBJECT = "AB156"
+train_ds = FootDropDataset(DATA_DIR, (VAL_SUBJECT,))
+val_ds = FootDropDataset(DATA_DIR, ("AB185", "AB186", "AB188"))
+
+Positives: 25390, Negatives: 77084, pos_weight: 3.04
+Epoch 1/50  Train loss: 0.2764  Val loss: 0.3412  F1: 0.837  Precision: 0.744  Recall: 0.955
+  → New best model saved (F1: 0.837)
+Epoch 2/50  Train loss: 0.1873  Val loss: 0.3293  F1: 0.863  Precision: 0.801  Recall: 0.935
+  → New best model saved (F1: 0.863)
+Epoch 3/50  Train loss: 0.1768  Val loss: 0.3211  F1: 0.866  Precision: 0.805  Recall: 0.936
+  → New best model saved (F1: 0.866)
+Epoch 4/50  Train loss: 0.1689  Val loss: 0.2996  F1: 0.863  Precision: 0.791  Recall: 0.949
+Epoch 5/50  Train loss: 0.1628  Val loss: 0.2953  F1: 0.873  Precision: 0.821  Recall: 0.931
+  → New best model saved (F1: 0.873)
+Epoch 6/50  Train loss: 0.1581  Val loss: 0.3399  F1: 0.855  Precision: 0.784  Recall: 0.940
+Epoch 7/50  Train loss: 0.1508  Val loss: 0.3473  F1: 0.871  Precision: 0.824  Recall: 0.923
+Epoch 8/50  Train loss: 0.1476  Val loss: 0.2995  F1: 0.871  Precision: 0.806  Recall: 0.948
+Epoch 9/50  Train loss: 0.1456  Val loss: 0.3224  F1: 0.868  Precision: 0.810  Recall: 0.936
+Epoch 10/50  Train loss: 0.1393  Val loss: 0.3384  F1: 0.870  Precision: 0.809  Recall: 0.941
+Epoch 11/50  Train loss: 0.1379  Val loss: 0.4006  F1: 0.862  Precision: 0.820  Recall: 0.909
+Epoch 12/50  Train loss: 0.1363  Val loss: 0.3170  F1: 0.872  Precision: 0.809  Recall: 0.946
+Epoch 13/50  Train loss: 0.1304  Val loss: 0.4118  F1: 0.860  Precision: 0.832  Recall: 0.889
+Epoch 14/50  Train loss: 0.1323  Val loss: 0.3465  F1: 0.878  Precision: 0.833  Recall: 0.928
+  → New best model saved (F1: 0.878)
+Epoch 15/50  Train loss: 0.1265  Val loss: 0.3476  F1: 0.872  Precision: 0.822  Recall: 0.929
+Epoch 16/50  Train loss: 0.1252  Val loss: 0.4038  F1: 0.870  Precision: 0.820  Recall: 0.926
+Epoch 17/50  Train loss: 0.1236  Val loss: 0.3770  F1: 0.862  Precision: 0.815  Recall: 0.915
+Epoch 18/50  Train loss: 0.1248  Val loss: 0.4100  F1: 0.860  Precision: 0.811  Recall: 0.915

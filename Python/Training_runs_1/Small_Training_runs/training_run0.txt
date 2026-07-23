@@ -1,0 +1,23 @@
+Did not work well at all - AB188 likely had bad data
+
+VAL_SUBJECT = "AB188"
+train_ds = FootDropDataset(DATA_DIR, (VAL_SUBJECT,))
+val_ds = FootDropDataset(DATA_DIR, ("AB186", "AB185", "AB156"))
+
+Positives: 27128, Negatives: 78466, pos_weight: 2.89
+Epoch 1/50  Train loss: 0.2426  Val loss: 2.7141  F1: 0.571  Precision: 0.680  Recall: 0.492
+  → New best model saved (F1: 0.571)
+Epoch 2/50  Train loss: 0.1983  Val loss: 2.5915  F1: 0.581  Precision: 0.701  Recall: 0.496
+  → New best model saved (F1: 0.581)
+Epoch 3/50  Train loss: 0.1848  Val loss: 3.0372  F1: 0.577  Precision: 0.696  Recall: 0.494
+Epoch 4/50  Train loss: 0.1742  Val loss: 3.2192  F1: 0.583  Precision: 0.695  Recall: 0.501
+  → New best model saved (F1: 0.583)
+Epoch 5/50  Train loss: 0.1685  Val loss: 3.2041  F1: 0.576  Precision: 0.696  Recall: 0.492
+Epoch 6/50  Train loss: 0.1650  Val loss: 3.3738  F1: 0.586  Precision: 0.696  Recall: 0.506
+  → New best model saved (F1: 0.586)
+Epoch 7/50  Train loss: 0.1610  Val loss: 3.5172  F1: 0.582  Precision: 0.693  Recall: 0.502
+Epoch 8/50  Train loss: 0.1593  Val loss: 3.4757  F1: 0.581  Precision: 0.703  Recall: 0.495
+Epoch 9/50  Train loss: 0.1558  Val loss: 3.5762  F1: 0.582  Precision: 0.697  Recall: 0.499
+Epoch 10/50  Train loss: 0.1508  Val loss: 3.7213  F1: 0.584  Precision: 0.724  Recall: 0.489
+Epoch 11/50  Train loss: 0.1487  Val loss: 3.7943  F1: 0.572  Precision: 0.697  Recall: 0.486
+Epoch 12/50  Train loss: 0.1461  Val loss: 3.9693  F1: 0.580  Precision: 0.709  Recall: 0.491

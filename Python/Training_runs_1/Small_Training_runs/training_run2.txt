@@ -1,0 +1,43 @@
+VAL_SUBJECT = "AB185"
+train_ds = FootDropDataset(DATA_DIR, (VAL_SUBJECT,))
+val_ds = FootDropDataset(DATA_DIR, ("AB156", "AB188", "AB186"))
+
+Positives: 24598, Negatives: 75710, pos_weight: 3.08
+Epoch 1/50  Train loss: 0.3425  Val loss: 0.1614  F1: 0.929  Precision: 0.882  Recall: 0.982
+  → New best model saved (F1: 0.929)
+Epoch 2/50  Train loss: 0.2454  Val loss: 0.1754  F1: 0.916  Precision: 0.850  Recall: 0.994
+Epoch 3/50  Train loss: 0.2254  Val loss: 0.1734  F1: 0.909  Precision: 0.836  Recall: 0.996
+Epoch 4/50  Train loss: 0.2136  Val loss: 0.1487  F1: 0.928  Precision: 0.871  Recall: 0.993
+Epoch 5/50  Train loss: 0.2066  Val loss: 0.1489  F1: 0.923  Precision: 0.862  Recall: 0.995
+Epoch 6/50  Train loss: 0.1993  Val loss: 0.1456  F1: 0.928  Precision: 0.870  Recall: 0.994
+Epoch 7/50  Train loss: 0.1947  Val loss: 0.1503  F1: 0.921  Precision: 0.856  Recall: 0.996
+Epoch 8/50  Train loss: 0.1905  Val loss: 0.1481  F1: 0.928  Precision: 0.871  Recall: 0.993
+Epoch 9/50  Train loss: 0.1886  Val loss: 0.1449  F1: 0.926  Precision: 0.865  Recall: 0.996
+Epoch 10/50  Train loss: 0.1839  Val loss: 0.1416  F1: 0.932  Precision: 0.879  Recall: 0.992
+  → New best model saved (F1: 0.932)
+Epoch 11/50  Train loss: 0.1813  Val loss: 0.1439  F1: 0.929  Precision: 0.873  Recall: 0.992
+Epoch 12/50  Train loss: 0.1805  Val loss: 0.1421  F1: 0.933  Precision: 0.881  Recall: 0.992
+  → New best model saved (F1: 0.933)
+Epoch 13/50  Train loss: 0.1760  Val loss: 0.1432  F1: 0.931  Precision: 0.880  Recall: 0.989
+Epoch 14/50  Train loss: 0.1723  Val loss: 0.1388  F1: 0.934  Precision: 0.882  Recall: 0.991
+  → New best model saved (F1: 0.934)
+Epoch 15/50  Train loss: 0.1718  Val loss: 0.1438  F1: 0.933  Precision: 0.881  Recall: 0.992
+Epoch 16/50  Train loss: 0.1699  Val loss: 0.1424  F1: 0.930  Precision: 0.874  Recall: 0.994
+Epoch 17/50  Train loss: 0.1667  Val loss: 0.1469  F1: 0.932  Precision: 0.886  Recall: 0.983
+Epoch 18/50  Train loss: 0.1666  Val loss: 0.1432  F1: 0.932  Precision: 0.882  Recall: 0.988
+Epoch 19/50  Train loss: 0.1602  Val loss: 0.1441  F1: 0.928  Precision: 0.870  Recall: 0.993
+Epoch 20/50  Train loss: 0.1597  Val loss: 0.1386  F1: 0.935  Precision: 0.888  Recall: 0.987
+  → New best model saved (F1: 0.935)
+Epoch 21/50  Train loss: 0.1575  Val loss: 0.1424  F1: 0.932  Precision: 0.882  Recall: 0.989
+Epoch 22/50  Train loss: 0.1557  Val loss: 0.1386  F1: 0.931  Precision: 0.878  Recall: 0.992
+Epoch 23/50  Train loss: 0.1583  Val loss: 0.1537  F1: 0.937  Precision: 0.899  Recall: 0.978
+  → New best model saved (F1: 0.937)
+Epoch 24/50  Train loss: 0.1533  Val loss: 0.1414  F1: 0.930  Precision: 0.874  Recall: 0.993
+Epoch 25/50  Train loss: 0.1553  Val loss: 0.1370  F1: 0.934  Precision: 0.885  Recall: 0.989
+Epoch 26/50  Train loss: 0.1503  Val loss: 0.1446  F1: 0.934  Precision: 0.889  Recall: 0.983
+Epoch 27/50  Train loss: 0.1465  Val loss: 0.1492  F1: 0.932  Precision: 0.883  Recall: 0.987
+Epoch 28/50  Train loss: 0.1480  Val loss: 0.1518  F1: 0.932  Precision: 0.880  Recall: 0.991
+Epoch 29/50  Train loss: 0.1496  Val loss: 0.1504  F1: 0.927  Precision: 0.871  Recall: 0.991
+Epoch 30/50  Train loss: 0.1477  Val loss: 0.1402  F1: 0.932  Precision: 0.881  Recall: 0.990
+Epoch 31/50  Train loss: 0.1391  Val loss: 0.1776  F1: 0.931  Precision: 0.900  Recall: 0.966
+Epoch 32/50  Train loss: 0.1438  Val loss: 0.1526  F1: 0.933  Precision: 0.887  Recall: 0.984

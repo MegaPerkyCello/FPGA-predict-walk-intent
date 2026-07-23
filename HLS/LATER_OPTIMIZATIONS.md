@@ -12,6 +12,9 @@ Current baseline (fixed-point `<16,6>`, all loops rolled, `pipeline_loops=0`):
 
 ---
 
+
+## 0. I still need to implement 60, 180, 300, 420 Hz notch filters then rectify the signal.
+
 ## 1. Share one tanh core + move activations to fixed-point  *(area lever)*
 
 **What.** Today `tanh_act` synthesizes as Vitis's **float** tanh (~45 DSP, with a

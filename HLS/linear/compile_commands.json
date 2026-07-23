@@ -1,29 +1,29 @@
 [
   {
-    "directory": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\linear",
+    "directory": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\HLS\\linear",
     "arguments": [
       "C:\\Xilinx\\2025.1\\Vitis_HLS\\vcxx\\libexec\\clang++.exe",
       "--sysroot=C:\\Xilinx\\2025.1\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
       "-fhls",
       "-hls-syn-headers-dir=C:\\Xilinx\\2025.1\\Vitis\\common\\technology\\autopilot",
       "-fhlstoplevel=fc",
-      "-IC:/Users/cocol/Ruby_Proj/workspace/header",
+      "-IC:/Users/cocol/Ruby_Proj/workspace/HLS/header",
       "-c",
-      "C:\\Users\\cocol\\Ruby_Proj\\workspace\\linear\\.\\fc.cpp"
+      "C:\\Users\\cocol\\Ruby_Proj\\workspace\\HLS\\linear\\.\\fc.cpp"
     ],
-    "file": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\linear\\.\\fc.cpp"
+    "file": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\HLS\\linear\\.\\fc.cpp"
   },
   {
-    "directory": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\linear",
+    "directory": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\HLS\\linear",
     "arguments": [
       "C:\\Xilinx\\2025.1\\Vitis_HLS\\vcxx\\libexec\\clang++.exe",
       "--sysroot=C:\\Xilinx\\2025.1\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
       "-fhls-tb",
       "-hls-sim-headers-dir=C:\\Xilinx\\2025.1\\Vitis\\include",
-      "-IC:/Users/cocol/Ruby_Proj/workspace/header",
+      "-IC:/Users/cocol/Ruby_Proj/workspace/HLS/header",
       "-c",
-      "C:\\Users\\cocol\\Ruby_Proj\\workspace\\linear\\.\\fc_TB.cpp"
+      "C:\\Users\\cocol\\Ruby_Proj\\workspace\\HLS\\linear\\.\\fc_TB.cpp"
     ],
-    "file": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\linear\\.\\fc_TB.cpp"
+    "file": "C:\\Users\\cocol\\Ruby_Proj\\workspace\\HLS\\linear\\.\\fc_TB.cpp"
   }
 ]

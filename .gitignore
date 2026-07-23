@@ -19,3 +19,21 @@
 
 _ide/logs
 _ide/.wsdata
+
+# ---- Vitis HLS generated output (regenerated on every C-sim / synthesis) ----
+# Each component keeps all HLS build output in a nested <name>/<name>/ directory.
+# Source (.cpp/.h), hls_config.cfg, and *_goldens/ live at the component top
+# level and stay tracked.
+conv1/conv1/
+conv2/conv2/
+LSTM/LSTM/
+Relu_Max_1/Relu_Max_1/
+Relu_Max_2/Relu_Max_2/
+fc/fc/
+
+# Stray per-component build files, IDE workspace state, and editor index caches
+**/*.hlscompile_summary
+**/dfx_runtime.txt
+**/.cache/
+_ide/
+.vitisWorkspace.json

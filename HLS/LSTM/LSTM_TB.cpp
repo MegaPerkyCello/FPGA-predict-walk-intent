@@ -43,13 +43,24 @@ static data_t c[LSTM_HIDDEN];
 
 #ifdef USE_FIXED
 // The LSTM is the dangerous layer: h/c feed back for 8 steps so error can
-// accumulate WITHIN the layer. Measured worst on real+synthetic vectors at
-// <16,6> is ~7e-3 abs on near-zero h elements, so ABS_TOL is a touch looser
-// here than the feedforward layers -- still ~10 LSB, and the real intent
-// vectors clear it with >2x margin. The true acceptance test is the fc logit
-// sign (Step 4), not per-element h error.
+// accumulate WITHIN the layer.
+//
+// ABS_TOL was 1e-2, sized against a measured ~7e-3 floor when tanh_act was the
+// FLOAT tanh. Moving to half precision (LATER_OPTIMIZATIONS #1) adds ~1.3e-3 per
+// evaluation, and there are 5 evaluations per unit per timestep across 8 steps,
+// so the floor rose to ~1.08e-2 -- measured, on the synthetic random-normal
+// vector, which stresses activations harder than real gait data ever does.
+// 1.5e-2 restores roughly the same ~40% margin the 1e-2 figure originally had.
+//
+// This is a re-measurement, not a loosening to make a test pass. For scale, the
+// three REAL vectors clear it at severity 0.10-0.15 (idx0 0.151, first_intent
+// 0.151, ab156_intent 0.226 against the old 1e-2) -- 4-6x inside tolerance. Only
+// the synthetic stress vector approaches the limit, on 1 of 32 elements.
+// The true acceptance test remains the fc logit SIGN (Step 4), not per-element h
+// error, and the full chain shows 0 decision flips with |logit| >= 1.9 against a
+// ~1.5e-2 drift.
 const float REL_TOL = 1e-2f;
-const float ABS_TOL = 1e-2f;
+const float ABS_TOL = 1.5e-2f;
 #else
 const float REL_TOL = 1e-3f;   // float32 MAC noise, compounded over 8 recurrent steps
 const float ABS_TOL = 1e-5f;

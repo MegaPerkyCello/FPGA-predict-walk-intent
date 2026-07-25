@@ -49,6 +49,7 @@ HLS/LSTM/LSTM/
 HLS/Relu_Max_1/Relu_Max_1/
 HLS/Relu_Max_2/Relu_Max_2/
 HLS/linear/linear/
+HLS/inference/inference/
 
 # Stray per-component build files, IDE workspace state, editor index caches
 **/*.hlscompile_summary

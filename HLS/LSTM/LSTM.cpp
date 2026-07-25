@@ -1,19 +1,20 @@
-#include <hls_math.h>   // hls::tanh, hls::expf
+#include <hls_math.h>
 #include "layer_dims.h"
 
-// Transcendentals are evaluated in float on a quantized (data_t) argument, then
-// re-quantized on return. Two reasons: (1) hls::tanh/expf on an ap_fixed argument
-// is an ambiguous overload -- the operand converts equally well to float/double/
-// int -- so the cast picks the float core explicitly; (2) this reproduces exactly
-// what the validated float reference already did (float tanh/exp), so the goldens
-// stay meaningful. The datapath (MACs, state) is what carries fixed-point.
-static inline data_t sigmoid(data_t x) {
-    float xf = (float)x;
-    return (data_t)(1.0f / (1.0f + hls::expf(-xf)));
+// One half-precision tanh core serves the whole layer: the g candidate, the h
+// update, and all three sigmoids via the identity below.
+// half, not float -- the float tanh drags in a double-precision exp (~45 DSP).
+// half, not ap_fixed -- Vitis 2025.1's ap_fixed CORDIC tanh is broken: wrong sign
+// on negatives, and it faults near x=+11.8. See LATER_OPTIMIZATIONS.md #1.
+// .to_half(), not a (half) cast, which warns on all ~1,280 calls per inference.
+static inline data_t tanh_act(data_t x) {
+    return (data_t)hls::tanh(x.to_half());
 }
 
-static inline data_t tanh_act(data_t x) {
-    return (data_t)hls::tanh((float)x);
+// sigmoid(x) = 0.5 + 0.5*tanh(0.5*x) -- algebraically exact. In fixed point the
+// 0.5*x halving rounds one bit below data_t, worth ~1e-4, under the 2^-10 LSB.
+static inline data_t sigmoid(data_t x) {
+    return (data_t)0.5 + (data_t)0.5 * tanh_act((data_t)0.5 * x);
 }
 
 void LSTM_step(

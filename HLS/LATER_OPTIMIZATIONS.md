@@ -15,6 +15,63 @@ Current baseline (fixed-point `<16,6>`, all loops rolled, `pipeline_loops=0`):
 
 ## 0. I still need to implement 60, 180, 300, 420 Hz notch filters then rectify the signal.
 
+## 1. ~~Share one tanh core + move activations to fixed-point~~ — **DONE (2026-07-25), but NOT as written below**
+
+> **APPLIED, with a correction. Read this box before the original text, which is wrong
+> in its central claim.**
+>
+> The sigmoid identity was right and is in use. The *fixed-point tanh* was not: the
+> `hls::tanh(ap_fixed)` overload this section recommends is **unusable in Vitis 2025.1**.
+> Measured, not assumed:
+>
+> 1. **`hls::tanh(x)` on `data_t` does not compile — inside Vitis, not just under local
+>    g++.** The text below blames the local harness; that is incorrect. The real cause is
+>    that the CORDIC overload is declared `template<int W,int I> ap_fixed<W,I>
+>    tanh(ap_fixed<W,I>)`, which only deduces against the DEFAULT `AP_TRN/AP_WRAP` modes.
+>    `data_t` carries `AP_RND/AP_SAT`, so deduction fails, that overload silently leaves
+>    the candidate set, and the `double`/`float`/`half`/integer overloads are all reachable
+>    by conversion → *"call to 'tanh' is ambiguous"*.
+> 2. Routing through a plain-mode alias reaches the CORDIC, which then shows **two library
+>    defects**: it returns **`tanh(|x|)`** — the wrong sign for every negative input
+>    (`tanh(-1.0)` → `+0.760742`) — and it **faults with an integer divide-by-zero** around
+>    `x ≈ +11.8`, in the positive range, which no sign correction would avoid. That fault
+>    was the cause of the otherwise unexplained C-sim crash of the full chain.
+>
+> **What is actually implemented: `hls::tanh(x.to_half())`.** Half precision has an
+> unambiguous overload and an 11-bit significand against `data_t`'s 10 fractional bits,
+> and it is *not* the float path, so the double-precision `exp` core is gone. Verified by
+> an exhaustive sweep of all 65,536 representable `ap_fixed<16,6>` values: worst error
+> **1.30e-3** (~1.33 LSB) vs float's 9.77e-4, zero values outside 2e-3, no faults.
+> Use `x.to_half()` and not `(half)x` — the cast is legal but warns on every conversion,
+> and this runs ~1,280 times per inference.
+>
+> **Measured result** (`inference_stream` top, 12 ns, vs the float baseline):
+>
+> | | float tanh + expf | half tanh + identity |
+> |---|---:|---:|
+> | DSP | 76 (35%) | **50 (22%)** |
+> | LUT | 16,471 | **14,908** |
+> | FF | 8,861 | **7,096** |
+> | BRAM_18K | 24 | **22** |
+> | Cycles | 132,144 | 137,585 |
+> | Latency | 1.59 ms | 1.65 ms |
+> | Slack | 0.01 ns | 0.01 ns |
+>
+> **26 DSP freed (a third of the design's total, 12% of the device)** for the preprocessing
+> filter chain — this was always an area lever and it delivered.
+>
+> **But it did NOT improve timing, and the reasoning that predicted it would was wrong.**
+> Slack is 0.01 ns before *and* after. With the float cores gone, `sigmoid`/`tanh_act` now
+> report 0.10 ns slack while `LSTM_step` itself reports 0.01 — the critical path was never
+> the transcendentals, it is in `LSTM_step`'s own logic (the gate accumulation / state
+> update). More fundamentally: **HLS schedules to fill whatever clock period it is given**,
+> packing operations per cycle until slack approaches zero, so a near-zero slack is the
+> expected outcome at *any* target and is weak evidence about real timing. That also
+> explains the 20 ns experiment, where slack only reached 0.25 ns. **Vivado post-route
+> timing is the only arbiter.**
+
+### Original text (retained for context — see the correction above)
+
 ## 1. Share one tanh core + move activations to fixed-point  *(area lever)*
 
 **What.** Today `tanh_act` synthesizes as Vitis's **float** tanh (~45 DSP, with a

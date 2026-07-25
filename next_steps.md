@@ -7,6 +7,10 @@ How, without touching your validated layer code: at the top-level integration fu
 
 Budget consequence: your current 5 BRAM does not include weights. Baking them adds ~9 → real system ≈ 14 BRAM (~5%). This is exactly why the HANDOFF says synthesize the chain integrated — per-component reports miss both the shared-DSP savings and the weight-ROM cost.
 
+> **MEASURED, first integrated synthesis (`inference` top, 12 ns, weights baked in): 16,471 LUT (~31%), 8,861 FF (~8%), 76 DSP (~35%), 24 BRAM_18K (~9%), ≈1.6 ms.**
+> **CURRENT (`inference_stream` top, 12 ns, sliding window internal, half-precision transcendentals): 14,908 LUT (~28%), 7,096 FF (~6%), 50 DSP (~22%), 22 BRAM_18K (~7%), ≈1.65 ms.** The DMA discussion below is superseded — with the preprocessing chain in the PL there is no DMA at all; the IP takes one sample pair per 100 Hz tick on plain wires.
+> Two corrections to the estimate above. **BRAM is 24, not ~14** — the ~9-block figure assumed the ~20 KB of weights packs densely, but they are 18 separate arrays (plus conv2's `ARRAY_PARTITION` splitting one three ways) and each ROM rounds up to whole blocks. **And there were no shared-DSP savings**: 76 is also what the per-component reports summed to. Each layer is a separate non-inlined RTL module, and HLS does not share multipliers across module instances — sequential dataflow alone does not buy DSP reuse. The weight-ROM cost was real; the sharing gain was not. Both are comfortably inside budget.
+
 Next steps — and what each actually is
 Your list has a terminology snag: "implementation" is a Vivado step (place & route), not an HLS one. The real flow:
 

@@ -87,7 +87,9 @@ with `pos_weight`, Adam lr=1e-3. Deployment model (AB185 held out):
 | `conv2.cpp` | `conv2_1d` | (16,16) → (32,16) |
 | `relu_max_2.cpp` | `relu_max_2` | (32,16) → (32,8) |
 | `lstm.cpp` | `LSTM_step`, `LSTM` | (8,32) → (32,) |
-| **MISSING** | `fc` / `Linear(32→1)` | (32,) → 1 logit |
+| `fc.cpp` | `fc` | (32,) → 1 logit |
+| `inference.cpp` | `inference` | (2,32) → 1 logit — pure integrated chain, weights from the generated `header/footdrop_weights.h` ROM |
+| `inference.cpp` | `inference_stream` | (emg, gyro) → 1 logit — **synthesis top**; holds the sliding window internally so the IP takes one sample pair per 100 Hz tick |
 
 Plus `conv1_tb.cpp`, `pool1_tb.cpp`, `conv2_tb.cpp`, `pool2_tb.cpp`, `lstm_tb.cpp`.
 
@@ -132,7 +134,22 @@ Fallback that always works: `#include "../common/layer_dims.h"` in the source.
 - Prefers inline `#pragma HLS` in source over GUI directive files (version control).
 - Clock 8 ns / 125 MHz, uncertainty left at default 27%.
 
-### Synthesis status (float, unoptimized)
+### Synthesis status
+
+> **CURRENT (`inference_stream` top, 12 ns clock, fixed-point `<16,6>`, weights baked
+> in as on-chip ROM, sliding window internal, half-precision tanh): 14,908 LUT (~28%),
+> 7,096 FF (~6%), 50 DSP (~22%), 22 BRAM_18K (~7%), 137,585 cycles ≈ 1.65 ms,
+> slack 0.01 ns.** Note slack sits near zero at *every* clock target — HLS schedules to
+> fill whatever period it is given, so this is not by itself a timing problem; Vivado
+> post-route is the arbiter. Full table and the interface map are in
+> [`README.md`](README.md).
+> These supersede everything below, which is the historical float
+> measurement kept for the reasoning about *why* float was misleading. Full table and
+> the two surprises (BRAM cost of the weight ROMs; no DSP sharing across layers) are in
+> [`README.md`](README.md).
+
+The original float figures —
+
 LSTM float synth: ~34,782 LUTs, 134 DSPs, 9 BRAM, slack −1.27 ns at 8 ns target.
 
 **Read this correctly:** the LUT count is a *float artifact*, not a floor.
@@ -374,16 +391,30 @@ arithmetic or wrong precision," and a one-line flip answers it immediately.
 
 ## 6. Next steps
 
-**Immediate**
-1. Write `fc.cpp` (`Linear(32→1)`) + testbench — the missing layer, and the one
-   whose output determines the classification.
-2. Re-run the range measurement on the **real trained checkpoint** with real
-   ENABL3S windows to size `I` per layer.
-3. Execute the fixed-point sweep above.
+**DONE** — `fc.cpp` + testbench; range measurement on the real checkpoint; the
+fixed-point sweep (`<16,6>`, 0 decision flips); the integrated `inference` chain
+with weights as baked-in ROM; the `inference_stream` wrapper holding the sliding
+window; half-precision transcendentals (76 → 50 DSP); **C/RTL cosimulation: PASS**.
 
-**Then**
-4. Top-level chain function + AXI4-Lite (control) / AXI4-Stream (data, matches
-   the DMA) at the outermost level only.
+**Remaining**
+1. **Package** to `ip_catalog`. Run it from a SHORT working directory — packaging
+   and cosim generate ~210-character internal paths and hit the Windows 260-byte
+   limit otherwise.
+2. **Vivado block design**: ZYNQ7 PS + this IP. Connect `s_axi_ctrl` to a PS
+   master; drive `ap_start` from the PL 100 Hz sample strobe (NOT the PS —
+   `ap_ready` is an output, easy to wire backwards). Reset is `ap_rst_n`,
+   synchronous active LOW. Then synthesis → implementation → bitstream; Vivado
+   post-route timing is the real arbiter, not the HLS estimate.
+3. **PL glue**: z-scoring against the standing baseline (the model only ever saw
+   normalized input), `ap_fixed<16,6>` scaling (integer = value × 2¹⁰), and an
+   overrun counter for `ap_idle` low at strobe time. `ap_start` now means
+   "exactly one new sample arrived" — firing twice or missing one silently
+   desynchronizes the window.
+4. **PYNQ deploy**: PS polls `logit_ctrl` @0x14 bit 0, reads the logit @0x10
+   (low 16 bits, sign-extend, scale 2⁻¹⁰). Polling was chosen over an interrupt —
+   `ap_done` is a single 12 ns pulse the GIC can miss unless latched.
+5. Optionally apply the remaining deferred optimizations with the testbenches as
+   regression checks:
 5. Apply deferred optimizations with the testbenches as regression checks:
    `i*g` fusion, then the four-gate loop merge (all four gates share one pair of
    `k`/`m` loops, reading `x[k]`/`h[m]` once instead of four times).

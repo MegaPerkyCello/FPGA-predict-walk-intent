@@ -144,6 +144,24 @@ Cases: `idx0`, `first_intent`, `max_range` (largest |x|), `synth`. Each layer's 
 the previous layer's output, so the HLS pipeline is checked stage by stage. These goldens
 later become the fixed-point quantization reference on the HLS side.
 
+There is also an `inference_goldens/` pseudo-layer: the **end-to-end** reference for the
+integrated HLS top level. It needs no new data — its input is the raw window (conv1's
+input) and its output is the logit (fc's output) — it just gives that component its own
+self-contained folder.
+
+The same run does two more things beyond writing `golden_vectors/`:
+
+- **Emits `../HLS/header/footdrop_weights.h`** — the `static const` weight ROMs the
+  integrated top level compiles in, so weights are baked into the bitstream rather than
+  loaded at runtime. Generated file, never hand-edited; it records the source
+  checkpoint's sha256 and the sign-off logits.
+- **Mirrors each golden directory into the HLS component that reads it**
+  (`golden_vectors/conv1/` → `HLS/conv1/conv1_goldens/`, and so on). Copy-only, so the
+  `*_chain_input.dat` files the testbenches themselves dump are left alone.
+
+Both exist for one reason: the weights the hardware uses and the vectors it is verified
+against must come from a single checkpoint, without a manual copy step in between.
+
 ---
 
 ## Setup & running

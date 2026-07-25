@@ -26,15 +26,23 @@ Run (after training writes best_model.pt):
 """
 
 from pathlib import Path
+import hashlib
+import shutil
 import numpy as np
 import torch
 from model import FootDropCNN
 
-REPO_ROOT = Path(__file__).resolve().parent
-DATA_DIR  = REPO_ROOT / "enabl3s_dataset_sliding"
-WEIGHTS   = REPO_ROOT / "best_model.pt"
-OUT_DIR   = REPO_ROOT / "golden_vectors"
-FMT       = "%.8e"
+REPO_ROOT  = Path(__file__).resolve().parent
+DATA_DIR   = REPO_ROOT / "enabl3s_dataset_sliding"
+WEIGHTS    = REPO_ROOT / "best_model.pt"
+OUT_DIR    = REPO_ROOT / "golden_vectors"
+FMT        = "%.8e"
+
+# Weight ROM header consumed by HLS/inference/inference.cpp. Emitted from the SAME
+# checkpoint as the goldens above, in the same run, so the two can never drift apart.
+HLS_ROOT   = REPO_ROOT.parent / "HLS"
+HDR_PATH   = HLS_ROOT / "header" / "footdrop_weights.h"
+HDR_FMT    = "%.9g"     # 9 significant digits round-trips float32 exactly
 
 
 def dump(path, arr):
@@ -99,9 +107,20 @@ def build_layers(sd):
         dict(name="conv2", in_key="pool1",   out_key="conv2",
              params={"weights": sd["conv2.weight"], "bias": sd["conv2.bias"]}),
         dict(name="pool2", in_key="conv2",   out_key="pool2", params={}),
-        dict(name="lstm",  in_key="lstm_in", out_key="lstm_h", params=lstm_params),
+        # dir="lstm_" (trailing underscore) is deliberate: that is the directory name
+        # the tracked goldens and the HLS LSTM testbench path both use. File names
+        # keep the plain "lstm_" prefix from name, so only the folder differs.
+        dict(name="lstm",  in_key="lstm_in", out_key="lstm_h", params=lstm_params,
+             dir="lstm_"),
         dict(name="fc",    in_key="lstm_h",  out_key="logit",
              params={"weights": sd["fc.weight"], "bias": sd["fc.bias"]}),
+        # Not a layer -- the WHOLE chain, for the integrated top level. Its input is
+        # the raw window (conv1's input) and its output is the logit (fc's output),
+        # so it needs no new data, just its own folder so the inference component
+        # is self-contained like every other one. Weights live in the ROM header,
+        # not here, hence no params.
+        dict(name="inference", in_key="input", out_key="logit", params={},
+             dir="inference_goldens"),
     ]
 
 
@@ -148,7 +167,127 @@ LAYER_SPEC = {
   output (1,)        fc_<case>_golden_output.dat
   weights(1,32)      fc_weights.dat       bias (1,) fc_bias.dat
   logit = weights @ input + bias;   probability = 1/(1+exp(-logit))""",
+"inference": """inference  (HLS: the full chain, conv1 -> pool1 -> conv2 -> pool2 -> lstm -> fc)
+  input  (2, 32)     inference_<case>_input.dat          idx = ch*32 + t
+                                                         (identical to conv1_<case>_input.dat)
+  output (1,)        inference_<case>_golden_output.dat  the logit
+                                                         (identical to fc_<case>_golden_output.dat)
+
+  No weight files here: the integrated top level reads its weights from the
+  generated ROM header HLS/header/footdrop_weights.h, not from .dat files.
+
+  This is the END-TO-END reference. The intermediate tensors never leave the DUT,
+  so the only observable is the logit and the only invariant that must hold is
+  sign(logit) == sign(golden). Magnitude drifts ~5e-3 through the quantized chain
+  at <16,6>; that is expected and non-fatal. A sign disagreement is a decision
+  flip and is always fatal.
+
+  max_range is exported but is NOT part of the sign-off set: its input reaches
+  |142| and intentionally overflows <16,6>. It is the range canary.""",
 }
+
+
+# Each golden_vectors/<dir> is mirrored into the HLS component that reads it, so a
+# single `python export_golden.py` refreshes both. Previously the HLS-side copies
+# were updated by hand, which meant the testbenches could silently verify against a
+# different checkpoint than the one that produced best_model.pt.
+# Copy-only (never delete): the *_chain_input.dat files in the HLS dirs are produced
+# by the testbenches themselves, not by this script, and must survive.
+HLS_MIRROR = {
+    "conv1":            "conv1/conv1_goldens",
+    "pool1":            "Relu_Max_1/pool1_goldens",
+    "conv2":            "conv2/conv2_goldens",
+    "pool2":            "Relu_Max_2/pool2_goldens",
+    "lstm_":            "LSTM/lstm_",
+    "fc":               "linear/fc_goldens",
+    "inference_goldens": "inference/inference_goldens",
+}
+
+
+def _c_init(arr, indent=2):
+    """Render an ndarray as a nested C brace initializer matching its shape.
+
+    Nested (rather than one flat list) on purpose: the brace structure has to match
+    the declared dimensions, so a shape mistake becomes a compile error in Vitis
+    instead of a silently mis-strided ROM.
+    """
+    arr = np.asarray(arr, dtype=np.float64)
+    pad = " " * indent
+    if arr.ndim == 1:
+        return "{ " + ", ".join(HDR_FMT % v for v in arr) + " }"
+    parts = [_c_init(sub, indent + 2) for sub in arr]
+    return "{\n" + pad + (",\n" + pad).join(parts) + "\n" + " " * (indent - 2) + "}"
+
+
+def emit_weight_header(sd, lstm_params, logits, path=HDR_PATH):
+    """Write the static const weight ROMs for the integrated HLS top level.
+
+    Declaring `static const data_t conv1_w[...];` with NO initializer would compile
+    fine and zero-fill -- an inference chain that runs and returns garbage. The
+    values ARE the point of this file.
+
+    `static const` + compile-time initializer is what makes Vitis infer a ROM baked
+    into the bitstream rather than an ap_memory port expecting external BRAM. The
+    float literals are converted by the ap_fixed constructor using the same
+    AP_RND/AP_SAT typedef the testbenches use when they assign a loaded float into
+    data_t, so the ROM contents are bit-identical to what C-sim verified.
+    """
+    digest = hashlib.sha256(WEIGHTS.read_bytes()).hexdigest()[:16]
+
+    decls = [
+        ("conv1_w", "[C1_OC][C1_IC][C1_K]", sd["conv1.weight"]),
+        ("conv1_b", "[C1_OC]",              sd["conv1.bias"]),
+        ("conv2_w", "[C2_OC][C2_IC][C2_K]", sd["conv2.weight"]),
+        ("conv2_b", "[C2_OC]",              sd["conv2.bias"]),
+    ]
+    for g in ("i", "f", "g", "o"):
+        decls += [
+            (f"lstm_w_ih_{g}", "[LSTM_HIDDEN][LSTM_IN_DIM]", lstm_params[f"w_ih_{g}"]),
+            (f"lstm_w_hh_{g}", "[LSTM_HIDDEN][LSTM_HIDDEN]", lstm_params[f"w_hh_{g}"]),
+            (f"lstm_b_{g}",    "[LSTM_HIDDEN]",              lstm_params[f"b_{g}"]),
+        ]
+    # fc.weight is (1,32) -> the single output row; fc.bias is a 1-element vector,
+    # but fc() takes the bias as a SCALAR data_t, so emit it as one.
+    decls.append(("fc_w", "[FC_IN]", np.asarray(sd["fc.weight"]).reshape(-1)))
+
+    n_params = sum(int(np.asarray(a).size) for _, _, a in decls) + 1
+    sign_off = "\n".join(f"//     {c:<14s} logit = {v:+.6f}" for c, v in logits)
+
+    body = "\n\n".join(
+        f"static const data_t {name}{dims} = {_c_init(arr)};" for name, dims, arr in decls
+    )
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(f"""\
+// ============================================================================
+// GENERATED FILE -- DO NOT EDIT BY HAND.
+// Regenerate with:  cd Python && python export_golden.py
+//
+// Weight ROMs for the integrated FootDrop inference chain
+// (HLS/inference/inference.cpp). Emitted from best_model.pt in the same run that
+// wrote golden_vectors/, so the ROM contents and the goldens the testbenches
+// check against always come from one checkpoint.
+//
+// Source checkpoint : best_model.pt   sha256[:16] = {digest}
+// Parameters        : {n_params}
+//
+// Sign-off logits for this checkpoint (float PyTorch, for cross-checking the
+// integrated C-sim against golden_vectors/manifest.txt):
+{sign_off}
+// ============================================================================
+
+#ifndef FOOTDROP_WEIGHTS_H
+#define FOOTDROP_WEIGHTS_H
+
+#include "layer_dims.h"
+
+{body}
+
+static const data_t fc_b = {HDR_FMT % float(np.asarray(sd["fc.bias"]).reshape(-1)[0])};
+
+#endif // FOOTDROP_WEIGHTS_H
+""")
+    return path, n_params, digest
 
 
 def selfcheck_conv1(x, w, b, out):
@@ -183,7 +322,7 @@ def main():
 
     # ── shared params + per-layer spec (once) ─────────────────────
     for L in layers:
-        d = OUT_DIR / L["name"]
+        d = OUT_DIR / L.get("dir", L["name"])
         d.mkdir(parents=True, exist_ok=True)
         for pname, arr in L["params"].items():
             dump(d / f"{L['name']}_{pname}.dat", arr)
@@ -196,18 +335,40 @@ def main():
 
     # ── per-case input/output for every layer ─────────────────────
     manifest = ["# case            source"]
+    logits = []
     for cname, x_np, src in pick_cases(inputs, labels, subj):
         st = forward_stages(model, x_np)
         for L in layers:
-            d = OUT_DIR / L["name"]
+            d = OUT_DIR / L.get("dir", L["name"])
             dump(d / f"{L['name']}_{cname}_input.dat",         st[L["in_key"]])
             dump(d / f"{L['name']}_{cname}_golden_output.dat", st[L["out_key"]])
         logit = float(st["logit"].item())
+        logits.append((cname, logit))
         manifest.append(f"{cname:14s}  {src}  | logit={logit:.5f}  p={1/(1+np.exp(-logit)):.4f}")
         print(f"  {cname:14s} logit={logit:+.4f}")
 
     (OUT_DIR / "manifest.txt").write_text("\n".join(manifest) + "\n")
     print(f"\nDone -> {OUT_DIR}   layers: {', '.join(L['name'] for L in layers)}")
+
+    # ── weight ROM header for the integrated HLS top level ────────
+    lstm_params = next(L for L in layers if L["name"] == "lstm")["params"]
+    hdr, n_params, digest = emit_weight_header(sd, lstm_params, logits)
+    print(f"Weight ROM header -> {hdr}   ({n_params} params, ckpt {digest})")
+
+    # ── mirror goldens into the HLS components that read them ─────
+    n_copied = 0
+    for src_dir, dst_rel in HLS_MIRROR.items():
+        src = OUT_DIR / src_dir
+        dst = HLS_ROOT / dst_rel
+        if not src.is_dir():
+            print(f"  WARNING: {src} missing, not mirrored")
+            continue
+        dst.mkdir(parents=True, exist_ok=True)
+        for f in sorted(src.iterdir()):
+            if f.is_file():
+                shutil.copy2(f, dst / f.name)
+                n_copied += 1
+    print(f"Mirrored {n_copied} golden files into {HLS_ROOT}")
 
 
 if __name__ == "__main__":

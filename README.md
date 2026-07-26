@@ -44,10 +44,11 @@ Trained on the public **ENABL3S** gait dataset, leave-one-subject-out:
 
 - **Quantization** (`ap_fixed<16,6>`): **0 decision flips** vs float PyTorch across intent
   vectors; logit drift ~5×10⁻³ through the full chain.
-- **Synthesis** (xc7z020, integrated top level at 12 ns, weights baked in as on-chip ROM,
-  sliding window held internally, half-precision transcendentals): **14,908 LUT (~28%),
-  7,096 FF (~6%), 50 DSP (~22%), 22 BRAM_18K (~7%), ≈1.65 ms** latency — fits with ample
-  headroom for the preprocessing filter chain.
+- **Implementation** (Vivado post-route on xc7z020, the whole system — inference IP with
+  weights as on-chip ROM, sliding window, AXI plumbing and PS7): **5,707 LUT (11%),
+  4,683 FF (4%), 49 DSP (22%), 11 BRAM tiles (8%)**, all timing constraints met with
+  **+10.1 ns slack** at 50 MHz. Inference completes in ~2.75 ms against a 10 ms budget.
+  The fabric is ~90% free for the preprocessing filter chain.
 
 ## Notes
 

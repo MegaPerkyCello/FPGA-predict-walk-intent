@@ -148,7 +148,36 @@ intent windows:
 `<16,6>` reproduces the float model's decisions exactly, at a fraction of the area of a
 float implementation.
 
-## Synthesis results (`inference_stream` top, 12 ns clock, xc7z020-clg400-1)
+## Post-route results — the real numbers
+
+Vivado implementation of the full system (this IP + AXI plumbing + PS7) on xc7z020,
+`FCLK_CLK0` = 50 MHz. **These supersede the HLS estimates below.**
+
+| Resource | Post-route | HLS estimate | Available |
+|---|---:|---:|---:|
+| LUT      | **5,707 (11%)** | 14,908 | 53,200 |
+| FF       | **4,683 (4%)**  | 7,096  | 106,400 |
+| DSP      | **49 (22%)**    | 50     | 220 |
+| BRAM tile| **11 (8%)**     | 22×18K | 140 |
+
+**All timing constraints met, WNS = +10.137 ns** at a 20 ns period — the real critical
+path is ~9.9 ns.
+
+Two things to take from this comparison:
+
+- **HLS overestimated LUTs by 2.6×.** HLS counts logic before Vivado's synthesis and
+  place-and-route optimize it. DSP and BRAM it got right (49 vs 50, and 11 36Kb tiles is
+  exactly the predicted 22×18K) because those are hard blocks it can count precisely.
+  Treat HLS LUT figures as a loose upper bound.
+- **The HLS slack figure was meaningless, as suspected.** It reported 0.01 ns at a 12 ns
+  target; post-route the true critical path is ~9.9 ns, which would clear 12 ns with over
+  2 ns to spare and even meet 100 MHz. HLS schedules to fill whatever period it is given,
+  so its slack always reads near zero. **Only post-route timing counts.**
+
+The clock stays at 50 MHz regardless: 2.75 ms against a 10 ms budget is ample, and a lower
+clock costs less power on a battery-powered device.
+
+## HLS synthesis estimates (`inference_stream` top, 12 ns clock, xc7z020-clg400-1)
 
 Weights, the sliding window, and half-precision transcendentals included — these are the
 numbers for the whole IP as it will be instantiated, not a sum of per-component reports:

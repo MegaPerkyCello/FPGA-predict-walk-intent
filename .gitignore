@@ -57,3 +57,13 @@ HLS/inference/inference/
 **/.cache/
 _ide/
 .vitisWorkspace.json
+
+# Vivado block design export scratch (regenerate with Vivado/export_bd.tcl)
+Vivado/bd/_exported_bd.tcl
+
+# Vivado journal/log droppings (written into whatever cwd vivado is launched from)
+vivado.jou
+vivado.log
+vivado_*.backup.jou
+vivado_*.backup.log
+.Xil/
